@@ -1,0 +1,235 @@
+:root {
+    --primary: white;
+    --secondary: #719ED4;
+    --background: #eaf4ff;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body {
+    min-height: 100vh;
+    width: 100vw;
+    background-color: var(--background);
+}
+header {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--primary);
+    box-shadow: 0 2px 20px var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 4%;
+    z-index: 1000;
+}
+header .logo {
+    font-size: 20px;
+    color: var(--secondary);
+    font-weight: bolder;
+}
+header .navbar ul {
+    list-style: none;
+}
+header .navbar li {
+    position: relative;
+    float: inline-start;
+}
+header .navbar li a {
+    font-size: 20px;
+    padding: 35px;
+    display: block;
+    color: var(--secondary);
+    font-weight: bolder;
+}
+header .navbar li a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+header .navbar li a:hover > i{
+    transform: rotate(0deg);
+}
+header .navbar ul li ul {
+    position: absolute;
+    left: 0;
+    width: auto;
+    background-color: var(--primary);
+    display: none;
+    box-shadow: 0 2px 20px var(--secondary);
+    border-radius: 0 0 10px 10px;
+}
+header .navbar ul li ul li{
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+header .navbar ul li:hover > ul {
+    display: initial;
+}
+#menu-bars {
+    display: none;
+}
+header label {
+    cursor: pointer;
+    display: none;
+}
+.logged{
+    padding: 20px;
+    text-align: center;
+}
+.logged p{
+    color: var(--secondary);
+    margin-bottom: 5px;
+}
+.logged a {
+    padding: 0 !important;
+}
+.logged a button{
+    border: 2px solid var(--secondary);
+    background-color: var(--primary);
+    color: var(--secondary);
+    padding: 5px 15px 5px 15px;
+    border-radius: 15px;
+    transition: 0.15s;
+    box-shadow: 0px 5px var(--secondary);
+}
+.logged a button:hover {
+    padding: 5px 20px 5px 20px;
+    cursor: pointer;
+    background-color: var(--secondary);
+    color: var(--primary);
+    box-shadow: 0 5px #5a7ca7;
+}
+.container {
+    display: grid;
+    height: 90vh;
+    grid-template-columns: 6fr 3fr;
+    grid-template-rows: 0.2fr 1fr 0.2fr 1fr;
+    grid-template-areas: 
+        "title1 map"
+        "buttons1 map"
+        "title2 map"
+        "buttons2 map";
+        padding: 20px;
+}
+ #title1 {
+    grid-area: title1;
+    font-size: 35px;
+    color: var(--secondary);
+    align-items: center;
+    display: flex;
+    padding-left: 10px;
+ }
+ #buttons1 {
+    grid-area: buttons1;
+ }
+ #buttons1 button {
+    border: 2px solid var(--secondary);
+    background-color: var(--primary);
+    color: var(--secondary);
+    padding: 15px 75px 15px 75px;
+    border-radius: 30px;
+    transition: 0.15s;
+    box-shadow: 0px 5px var(--secondary);
+    margin: 10px;
+    font-weight: bolder;
+    font-size: 20px;
+ }
+ #buttons1 button:hover {
+    cursor: pointer;
+    background-color: var(--secondary);
+    color: var(--primary);
+    box-shadow: 0 5px #5a7ca7;
+ }
+ #title2 {
+    grid-area: title2;
+    font-size: 35px;
+    color: var(--secondary);
+    align-items: center;
+    display: flex;
+    padding-left: 10px;
+ }
+ #buttons2 {
+    grid-area: buttons2;
+ }
+ #buttons2 button {
+    border: 2px solid var(--secondary);
+    background-color: var(--primary);
+    color: var(--secondary);
+    padding: 15px 75px 15px 75px;
+    border-radius: 30px;
+    transition: 0.15s;
+    box-shadow: 0px 5px var(--secondary);
+    margin: 10px;
+    font-weight: bolder;
+    font-size: 20px;
+ }
+ #buttons2 button:hover {
+    cursor: pointer;
+    background-color: var(--secondary);
+    color: var(--primary);
+    box-shadow: 0 5px #5a7ca7;
+ }
+ #map {
+    background-color: var(--secondary);
+    border-radius: 20px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary);
+    font-size: 30px;
+    grid-area: map;
+    overflow: hidden;
+ }
+
+@media(max-width:1172px) {
+    header {
+        padding: 25px;
+    }
+    header label {
+        display: initial;
+    }
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--primary);
+        display: none;
+    }
+    header .navbar ul li {
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    header .navbar ul li ul {
+        position: relative;
+        width: 100%;
+    }
+    header .navbar ul li ul li {
+        background: #eaf4ff;
+    }
+    #menu-bars:checked ~ .navbar {
+        display: initial;
+    }
+    .logged {
+        text-align:initial;
+        padding: 35px;
+    }
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 1fr 0.2fr 1fr;
+        grid-template-areas: 
+            "title1"
+            "buttons1"
+            "title2"
+            "buttons2"
+    }
+    #map {
+        display: none;
+    }
+}

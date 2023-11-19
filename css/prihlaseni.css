@@ -1,0 +1,79 @@
+:root{
+    --primary: white;
+    --secondary: #719ED4;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+.background {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(/img/Login_Background.png);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.container {
+    height: auto;
+    width: 280px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.350);
+    padding: 30px;
+    margin: 20px;
+    border-radius: 15px;
+}
+.img-box {
+    height: 150px;
+    width: 150px;
+    display:inline-block;
+    background-color: var(--secondary);
+    border-radius: 100%;
+}
+.input {
+    text-align: center;
+    border: 2px solid var(--primary);
+    background-color: transparent;
+    padding: 10px 20px;
+    font-size: medium;
+    margin-top: 15px;
+    border-radius: 25px;
+    transition: 0.15s;
+    color: var(--primary);
+    box-shadow: 0px 5px;
+}
+.input:hover {
+    padding: 10px 35px 10px 35px;
+    cursor: pointer;
+}
+.input:focus {
+    outline: none;
+    border: 2px solid var(--secondary);
+}
+.button-submit {
+    margin-top: 15px;
+    border: 2px solid var(--secondary);
+    background-color: var(--secondary);
+    color: var(--primary);
+    padding: 10px 25px 10px 25px;
+    border-radius: 25px;
+    transition: 0.15s;
+    box-shadow: 0px 5px;
+}
+.button-submit:hover {
+    padding: 10px 35px 10px 35px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.8);
+}
+::placeholder {
+    color: var(--primary);
+}
+::-ms-input-placeholder { 
+    color: var(--primary);
+}
