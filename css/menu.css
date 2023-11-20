@@ -106,7 +106,7 @@ header label {
 }
 .container {
     display: grid;
-    height: 90vh;
+    min-height: 90vh;
     grid-template-columns: 6fr 3fr;
     grid-template-rows: 0.2fr 1fr 0.2fr 1fr;
     grid-template-areas: 
@@ -184,7 +184,6 @@ header label {
     color: var(--primary);
     font-size: 30px;
     grid-area: map;
-    overflow: hidden;
  }
 
 @media(max-width:1172px) {
@@ -222,14 +221,15 @@ header label {
     }
     .container {
         grid-template-columns: 1fr;
-        grid-template-rows: 0.2fr 1fr 0.2fr 1fr;
+        grid-template-rows: 0.2fr 1fr 0.2fr 1fr 1fr;
         grid-template-areas: 
             "title1"
             "buttons1"
             "title2"
             "buttons2"
+            "map";
     }
     #map {
-        display: none;
+        margin-top: 20px;
     }
 }
