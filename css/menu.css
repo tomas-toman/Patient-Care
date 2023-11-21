@@ -12,7 +12,7 @@
 }
 body {
     min-height: 100vh;
-    width: 100vw;
+    max-width: 100vw;
     background-color: var(--background);
 }
 header {
@@ -106,7 +106,7 @@ header label {
 }
 .container {
     display: grid;
-    min-height: 90vh;
+    min-height: 86.5vh;
     grid-template-columns: 6fr 3fr;
     grid-template-rows: 0.2fr 1fr 0.2fr 1fr;
     grid-template-areas: 
@@ -114,7 +114,7 @@ header label {
         "buttons1 map"
         "title2 map"
         "buttons2 map";
-        padding: 20px;
+    padding: 20px;
 }
  #title1 {
     grid-area: title1;
@@ -231,5 +231,14 @@ header label {
     }
     #map {
         margin-top: 20px;
+    }
+}
+@media(max-width: 550px) {
+    #title1, #title2 {
+        justify-content: center;
+        padding-left: 0;
+    }
+    #buttons1, #buttons2 {
+        text-align: center;
     }
 }
