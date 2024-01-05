@@ -6,15 +6,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/prihlaseni.css">
+    <link rel="stylesheet" href="../css/prihlaseni.css">
     <title>Patient care | Přihlášení</title>
 </head>
 <body>
     <div class="background">
         <div class="container">
-            <form action="/html/menu.html" method="#">
+            <form action="./menu.php" method="#">
                 <div class="img-box">
-                    <div class="img"></div>
+                    <img src="../img/Logo.png" alt="">
                 </div>
                 <div class="input-box">
                     <input type="text" class="input" placeholder="Uživatelské jméno">

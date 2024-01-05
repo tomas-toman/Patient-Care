@@ -7,12 +7,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/db4d39efc5.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="../css/menu.css">
     <title>Patient care | Navigační menu</title>
 </head>
 <body>
     <header>
-        <a href="/html/menu.html" class="logo">Logo</a>
+        <a href="./menu.php" class="logo">
+            <img src="../img/Logo.png" alt="">
+        </a>
 
         <input type="checkbox" id="menu-bars">
         <label for="menu-bars"><i class="fa-solid fa-bars fa-xl" style="color: #719ED4;"></i></label>
@@ -36,7 +38,7 @@
                 <li>
                     <div class="logged">
                         <p>Jste přihlášen/a jako {user}</p>
-                        <a href="/html/prihlaseni.html"><button>Odhlásit se <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180"></i></button></a>
+                        <a href="./prihlaseni.php"><button>Odhlásit se <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180"></i></button></a>
                     </div>
                 </li>
             </ul>

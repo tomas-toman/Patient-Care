@@ -33,6 +33,11 @@ header .logo {
     color: var(--secondary);
     font-weight: bolder;
 }
+header .logo img {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
 header .navbar ul {
     list-style: none;
 }
@@ -241,4 +246,24 @@ header label {
     #buttons1, #buttons2 {
         text-align: center;
     }
+    header .logo img {
+        height: 60px;
+        width: 60px;
+    }
+}
+@media(max-width: 370px) {
+    #buttons1 button {
+        padding: 15px 30px 15px 30px;
+     }
+     #buttons2 button {
+        padding: 15px 30px 15px 30px;
+     }
+}
+@media(max-width: 290px) {
+    #buttons1 button {
+        padding: 15px 30px 15px 30px;
+     }
+     #buttons2 button {
+        padding: 15px 30px 15px 30px;
+     }
 }
