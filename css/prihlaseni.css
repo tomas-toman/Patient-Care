@@ -19,7 +19,7 @@
 }
 .container {
     height: auto;
-    width: 280px;
+    width: 300px;
     display: flex;
     align-items: center;
     text-align: center;
@@ -73,6 +73,11 @@
     padding: 10px 35px 10px 35px;
     cursor: pointer;
     color: rgba(255, 255, 255, 0.8);
+}
+.alert {
+    color: rgb(255, 202, 202);
+    padding: 0;
+    margin: 15px 0 0 0;
 }
 ::placeholder {
     color: var(--primary);

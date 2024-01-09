@@ -112,25 +112,26 @@ header label {
 .container {
     display: grid;
     min-height: 86.5vh;
-    grid-template-columns: 6fr 3fr;
-    grid-template-rows: 0.2fr 1fr 0.2fr 1fr;
+    grid-template-columns: 1fr 0.5fr;
+    grid-template-rows: 0.2fr 1fr;
     grid-template-areas: 
-        "title1 map"
-        "buttons1 map"
-        "title2 map"
-        "buttons2 map";
+        "title map"
+        "buttons1 map";
     padding: 20px;
 }
- #title1 {
-    grid-area: title1;
+ #title {
+    grid-area: title;
     font-size: 35px;
     color: var(--secondary);
     align-items: center;
+    text-align: center;
+    justify-content: center;
     display: flex;
     padding-left: 10px;
  }
  #buttons1 {
     grid-area: buttons1;
+    text-align: center;
  }
  #buttons1 button {
     border: 2px solid var(--secondary);
@@ -145,35 +146,6 @@ header label {
     font-size: 20px;
  }
  #buttons1 button:hover {
-    cursor: pointer;
-    background-color: var(--secondary);
-    color: var(--primary);
-    box-shadow: 0 5px #5a7ca7;
- }
- #title2 {
-    grid-area: title2;
-    font-size: 35px;
-    color: var(--secondary);
-    align-items: center;
-    display: flex;
-    padding-left: 10px;
- }
- #buttons2 {
-    grid-area: buttons2;
- }
- #buttons2 button {
-    border: 2px solid var(--secondary);
-    background-color: var(--primary);
-    color: var(--secondary);
-    padding: 15px 75px 15px 75px;
-    border-radius: 30px;
-    transition: 0.15s;
-    box-shadow: 0px 5px var(--secondary);
-    margin: 10px;
-    font-weight: bolder;
-    font-size: 20px;
- }
- #buttons2 button:hover {
     cursor: pointer;
     background-color: var(--secondary);
     color: var(--primary);
@@ -225,21 +197,22 @@ header label {
         padding: 35px;
     }
     .container {
+        display: grid;
+        min-height: 86.5vh;
         grid-template-columns: 1fr;
-        grid-template-rows: 0.2fr 1fr 0.2fr 1fr 1fr;
+        grid-template-rows: 0.2fr 1fr 2fr;
         grid-template-areas: 
-            "title1"
+            "title"
             "buttons1"
-            "title2"
-            "buttons2"
             "map";
+        padding: 20px;
     }
     #map {
         margin-top: 20px;
     }
 }
 @media(max-width: 550px) {
-    #title1, #title2 {
+    #title {
         justify-content: center;
         padding-left: 0;
     }
@@ -252,18 +225,10 @@ header label {
     }
 }
 @media(max-width: 370px) {
-    #buttons1 button {
-        padding: 15px 30px 15px 30px;
-     }
-     #buttons2 button {
-        padding: 15px 30px 15px 30px;
-     }
-}
-@media(max-width: 290px) {
-    #buttons1 button {
-        padding: 15px 30px 15px 30px;
-     }
-     #buttons2 button {
-        padding: 15px 30px 15px 30px;
+    #title p {
+        font-size: 25px;
+    }
+    #buttons1 button, #buttons2 button {
+        padding: 10px 25px 10px 25px;
      }
 }

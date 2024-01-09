@@ -12,8 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/db4d39efc5.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/menu.css">
-    <title>Patient care | Navigační menu</title>
+    <link rel="stylesheet" href="../css/oddeleni.css">
+    <title>Patient care | Oddělení</title>
 </head>
 <body>
     <header>
@@ -26,7 +26,7 @@
 
         <nav class="navbar">
             <ul>
-                <li><a href="#">Navigační menu</a></li>
+                <li><a href="./menu.php">Navigační menu</a></li>
                 <li><a href="#">Zaměstnanci <i class="fa-solid fa-caret-down fa-rotate-90"></i></a>
                     <ul>
                         <li><a href="#">Výpis zamětnanců</a></li>
@@ -50,33 +50,13 @@
         </nav>
     </header>
     <div class="container">
-        <div id="title1">
-            <p>1. Patro</p>
+        <div id="title">
+            <p><?php echo $_SESSION['data_nazev']; ?></p>
         </div>
         <div id="buttons1">
-            <form action="../php/oddeleni_presmerovac.php" method="post">
-                <button type="submit" name="button" value="1">Chirurgické odd.</button>
-                <button type="submit" name="button" value="2">JIP</button>
-                <button type="submit" name="button" value="3">Gynekologicko-porodnické odd.</button>
-                <button type="submit" name="button" value="4">Traumatologické odd.</button>
-                <button type="submit" name="button" value="5">ORL a CHHK</button>
-                <button type="submit" name="button" value="6">Novorozenecké odd.</button>
-            </form>
-        </div>
-        <div id="title2">
-            <p>2. Patro</p>
-        </div>
-        <div id="buttons2">
-            <form action="../php/oddeleni_presmerovac.php" method="post">
-                <button type="submit" name="button" value="7">ARO</button>
-                <button type="submit" name="button" value="8">Dětské odd.</button>
-                <button type="submit" name="button" value="9">DIP</button>
-                <button type="submit" name="button" value="10">VIN I.</button>
-                <button type="submit" name="button" value="11">VIN II.</button>
-                <button type="submit" name="button" value="12">Urologické odd.</button>
-                <button type="submit" name="button" value="13">TRN</button></a>
-                <button type="submit" name="button" value="14">Neurologické odd.</button>
-            </form>
+            <?php foreach($_SESSION['data_pokoje'] as $pokoj): ?>
+                <a href="#"><button>Pokoj č. <?php echo $pokoj['cislo_pokoje']; ?></button></a>
+            <?php endforeach; ?>
         </div>
         <div id="map">Mapa nemocnice</div>
     </div>
