@@ -1,0 +1,328 @@
+:root {
+    --primary: white;
+    --secondary: #719ED4;
+    --background: #eaf4ff;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body {
+    min-height: 100vh;
+    max-width: 100vw;
+    background-color: var(--background);
+}
+header {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--primary);
+    box-shadow: 0 2px 20px var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 4%;
+    z-index: 1000;
+}
+header .logo {
+    font-size: 20px;
+    color: var(--secondary);
+    font-weight: bolder;
+}
+header .logo img {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+header .navbar ul {
+    list-style: none;
+}
+header .navbar li {
+    position: relative;
+    float: inline-start;
+}
+header .navbar li a {
+    font-size: 20px;
+    padding: 35px;
+    display: block;
+    color: var(--secondary);
+    font-weight: bolder;
+}
+header .navbar li a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+header .navbar li a:hover > i{
+    transform: rotate(0deg);
+}
+header .navbar ul li ul {
+    position: absolute;
+    left: 0;
+    width: auto;
+    background-color: var(--primary);
+    display: none;
+    box-shadow: 0 2px 20px var(--secondary);
+    border-radius: 0 0 10px 10px;
+}
+header .navbar ul li ul li{
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+header .navbar ul li:hover > ul {
+    display: initial;
+}
+#menu-bars {
+    display: none;
+}
+header label {
+    cursor: pointer;
+    display: none;
+}
+.logged{
+    padding: 20px;
+    text-align: center;
+}
+.logged p{
+    color: var(--secondary);
+    margin-bottom: 5px;
+}
+.logged a {
+    padding: 0 !important;
+}
+.logged a button{
+    border: 2px solid var(--secondary);
+    background-color: var(--primary);
+    color: var(--secondary);
+    padding: 5px 15px 5px 15px;
+    border-radius: 15px;
+    transition: 0.15s;
+    box-shadow: 0px 5px var(--secondary);
+}
+.logged a button:hover {
+    padding: 5px 20px 5px 20px;
+    cursor: pointer;
+    background-color: var(--secondary);
+    color: var(--primary);
+    box-shadow: 0 5px #5a7ca7;
+}
+#container {
+    display: grid;
+    min-height: 86.5vh;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 0.2fr 1fr;
+    grid-template-areas: 
+        "title map"
+        "buttons1 map";
+    padding: 20px;
+}
+ #title {
+    grid-area: title;
+    font-size: 35px;
+    color: var(--secondary);
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    padding-left: 10px;
+ }
+ #buttons1 {
+    grid-area: buttons1;
+    text-align: center;
+ }
+ #buttons1 button {
+    border: 2px solid var(--secondary);
+    background-color: var(--primary);
+    color: var(--secondary);
+    padding: 15px 75px 15px 75px;
+    border-radius: 30px;
+    transition: 0.15s;
+    box-shadow: 0px 5px var(--secondary);
+    margin: 10px;
+    font-weight: bolder;
+    font-size: 20px;
+ }
+ #buttons1 button:hover {
+    cursor: pointer;
+    background-color: var(--secondary);
+    color: var(--primary);
+    box-shadow: 0 5px #5a7ca7;
+ }
+ #map {
+    background-color: var(--secondary);
+    border-radius: 20px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary);
+    font-size: 30px;
+    grid-area: map;
+ }
+ #info {
+    grid-area: info;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+ #info-card {
+    background-color: var(--primary);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 20px var(--secondary);
+    height: 550px;
+    width: 400px;
+ }
+ #info-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+ }
+ #info-card p {
+    color: var(--secondary);
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+ }
+ #paragraphs {
+    margin-top: 15px;
+ }
+ #info-card i {
+    font-size: 150px;
+    color: #394f69;
+ }
+ #dokument-btn{
+    border: 2px solid #4e6c91;
+    background-color: var(--secondary);
+    color: var(--primary);
+    padding: 10px 55px 10px 55px;
+    border-radius: 30px;
+    transition: 0.15s;
+    box-shadow: 0px 5px #394f69;
+    margin: 10px;
+    font-weight: bolder;
+    font-size: 20px;
+ }
+ #dokument-btn:hover {
+    cursor: pointer;
+    background-color: var(--primary);
+    color: var(--secondary);
+ }
+ #close-btn {
+    border: 2px solid #e05a5a;
+    background-color: #FF6464;
+    color: var(--primary);
+    padding: 10px 65px 10px 65px;
+    border-radius: 30px;
+    transition: 0.15s;
+    box-shadow: 0px 5px #cc5151;
+    margin: 10px;
+    font-weight: bolder;
+    font-size: 20px;
+ }
+ #close-btn:hover {
+    cursor: pointer;
+    background-color: var(--primary);
+    color: #FF6464;
+ }
+
+@media(max-width:1263px) {
+    header {
+        padding: 25px;
+    }
+    header label {
+        display: initial;
+    }
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--primary);
+        display: none;
+    }
+    header .navbar ul li {
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    header .navbar ul li ul {
+        position: relative;
+        width: 100%;
+    }
+    header .navbar ul li ul li {
+        background: #eaf4ff;
+    }
+    #menu-bars:checked ~ .navbar {
+        display: initial;
+    }
+    .logged {
+        text-align:initial;
+        padding: 35px;
+    }
+    #container {
+        display: grid;
+        min-height: 86.5vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 0.2fr 1fr;
+        grid-template-areas: 
+            "title"
+            "buttons1"
+            "map";
+        padding: 20px;
+    }
+    #map {
+        margin-top: 20px;
+    }
+    #info{
+        margin: 20px;
+    }
+}
+@media(max-width: 550px) {
+    #title {
+        justify-content: center;
+        padding-left: 0;
+    }
+    #buttons1 {
+        text-align: center;
+    }
+    header .logo img {
+        height: 60px;
+        width: 60px;
+    }
+    #info-card{
+        width: 300px;
+    }
+}
+@media(max-width: 370px) {
+    #title p {
+        font-size: 25px;
+    }
+    #buttons1 button {
+        padding: 10px 25px 10px 25px;
+    }
+    #info-card{
+        width: 220px;
+        height: 480px;
+    }
+    #dokument-btn{
+        padding: 10px 25px 10px 25px;
+    }
+    #close-btn{
+        padding: 10px 45px 10px 45px;
+    }
+    #info-card p {
+        font-size: 15px;
+    }
+    #info {
+        width: 200px;
+    }
+    #map {
+        width: 240px;
+    }
+}

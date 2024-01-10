@@ -12,8 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/db4d39efc5.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/oddeleni.css">
-    <title>Patient care | <?php echo $_SESSION['data_nazev']; ?></title>
+    <link rel="stylesheet" href="../css/pokoj.css">
+    <title>Patient care | Pokoj č. <?php echo $_SESSION['cislo_pokoje']; ?></title>
 </head>
 <body>
     <header>
@@ -49,19 +49,34 @@
             </ul>
         </nav>
     </header>
-    <div class="container">
+    <div id="container">
         <div id="title">
-            <p><?php echo $_SESSION['data_nazev']; ?></p>
+            <p>Pokoj č. <?php echo $_SESSION['cislo_pokoje']; ?> <br> (<?php echo $_SESSION['data_nazev']; ?>)</p>
         </div>
         <div id="buttons1">
-            <form action="../php/pokoj_presmerovac.php" method="post">
-                <?php foreach($_SESSION['data_pokoje'] as $pokoj): ?>
-                    <button name="button" value="<?php echo $pokoj['cislo_pokoje']?>">Pokoj č. <?php echo $pokoj['cislo_pokoje']; ?></button>
-                <?php endforeach; ?>
-            </form>
+            <?php foreach($_SESSION['data_luzka'] as $luzka): ?>
+                <button id="bed-value">Lůžko č. <?php echo $luzka['cislo_luzka']; ?></button>
+            <?php endforeach; ?>
+        </div>
+        <div id="info">
+                <div id="info-card">
+                    <i class="fa-solid fa-user" id="info-content"></i>
+                    <div id="paragraphs"></div>
+                    <p>ID: </p>
+                    <p>Jméno: </p>
+                    <p>Příjmení: </p>
+                    <p>Pohlaví: </p>
+                    <p>Datum narození: </p>
+                    <p>Rodné číslo: </p>
+                    <div id="info-content">
+                        <button id="dokument-btn">Dokumentace</button>
+                        <button id="close-btn">Zavřít</button>
+                    </div>
+                </div>
         </div>
         <div id="map">Mapa nemocnice</div>
     </div>
+<script src="../js/pokoj.js"></script>
 </body>
 </html>
 
