@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/db4d39efc5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/pokoj.css">
     <title>Patient care | Pokoj č. <?php echo $_SESSION['cislo_pokoje']; ?></title>

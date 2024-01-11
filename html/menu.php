@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/db4d39efc5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/menu.css">
     <title>Patient care | Navigační menu</title>
@@ -26,7 +26,7 @@
 
         <nav class="navbar">
             <ul>
-                <li><a href="#">Navigační menu</a></li>
+                <li><a href="#" class="current_page">Navigační menu</a></li>
                 <li><a href="#">Zaměstnanci <i class="fa-solid fa-caret-down fa-rotate-90"></i></a>
                     <ul>
                         <li><a href="#">Výpis zamětnanců</a></li>

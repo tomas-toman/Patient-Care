@@ -95,12 +95,13 @@ header label {
 }
 .logged a button{
     border: 2px solid var(--secondary);
-    background-color: var(--primary);
+    background-color: #719dd436;
     color: var(--secondary);
     padding: 5px 15px 5px 15px;
     border-radius: 15px;
     transition: 0.15s;
     box-shadow: 0px 5px var(--secondary);
+    font-weight: 500;
 }
 .logged a button:hover {
     padding: 5px 20px 5px 20px;
@@ -108,6 +109,10 @@ header label {
     background-color: var(--secondary);
     color: var(--primary);
     box-shadow: 0 5px #5a7ca7;
+}
+.current_page {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
 }
 .container {
     display: grid;
