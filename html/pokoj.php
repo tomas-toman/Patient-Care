@@ -54,9 +54,13 @@
             <p>Pokoj č. <?php echo $_SESSION['cislo_pokoje']; ?> <br> (<?php echo $_SESSION['data_nazev']; ?>)</p>
         </div>
         <div id="buttons1">
-            <?php foreach($_SESSION['data_luzka'] as $luzka): ?>
-                <button id="bed-value">Lůžko č. <?php echo $luzka['cislo_luzka']; ?></button>
-            <?php endforeach; ?>
+            <?php 
+            $i = 1;
+            foreach($_SESSION['data_luzka'] as $luzka): ?>
+                <button id="bed-value" onmouseover="changeImage('../img/Lůžko <?php echo $i; ?>.png')" onmouseout="changeImage('../img/Pokoj.png')">Lůžko č. <?php echo $luzka['cislo_luzka']; ?></button>
+            <?php 
+            $i++;
+            endforeach; ?>
         </div>
         <div id="info">
                 <div id="info-card">
@@ -74,9 +78,12 @@
                     </div>
                 </div>
         </div>
-        <div id="map">Mapa nemocnice</div>
-    </div>
+        <div id="map">
+            <img  id="mapImage" src="../img/Pokoj.png" alt="">
+        </div>
+    </div>  
 <script src="../js/pokoj.js"></script>
+<script src="../js/zmenaMapy.js"></script>
 </body>
 </html>
 

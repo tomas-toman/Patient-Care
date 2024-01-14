@@ -117,7 +117,7 @@ header label {
 .container {
     display: grid;
     min-height: 86.5vh;
-    grid-template-columns: 6fr 3fr;
+    grid-template-columns: 6fr 4fr;
     grid-template-rows: 0.2fr 1fr 0.2fr 1fr;
     grid-template-areas: 
         "title1 map"
@@ -155,46 +155,17 @@ header label {
     color: var(--primary);
     box-shadow: 0 5px #5a7ca7;
  }
- #title2 {
-    grid-area: title2;
-    font-size: 35px;
-    color: var(--secondary);
-    align-items: center;
-    display: flex;
-    padding-left: 10px;
- }
- #buttons2 {
-    grid-area: buttons2;
- }
- #buttons2 button {
-    border: 2px solid var(--secondary);
-    background-color: var(--primary);
-    color: var(--secondary);
-    padding: 15px 75px 15px 75px;
-    border-radius: 30px;
-    transition: 0.15s;
-    box-shadow: 0px 5px var(--secondary);
-    margin: 10px;
-    font-weight: bolder;
-    font-size: 20px;
- }
- #buttons2 button:hover {
-    cursor: pointer;
-    background-color: var(--secondary);
-    color: var(--primary);
-    box-shadow: 0 5px #5a7ca7;
- }
  #map {
-    background-color: var(--secondary);
-    border-radius: 20px;
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
-    color: var(--primary);
-    font-size: 30px;
     grid-area: map;
  }
+#map img {
+    height: auto;
+    width: 100%;
+}
 
 @media(max-width:1263px) {
     header {
@@ -231,7 +202,7 @@ header label {
     }
     .container {
         grid-template-columns: 1fr;
-        grid-template-rows: 0.2fr 1fr 0.2fr 1fr 1fr;
+        grid-template-rows: 0.2fr 0.4fr 0.2fr 0.4fr 1fr;
         grid-template-areas: 
             "title1"
             "buttons1"
@@ -239,36 +210,36 @@ header label {
             "buttons2"
             "map";
     }
-    #map {
-        margin-top: 20px;
-    }
 }
 @media(max-width: 550px) {
-    #title1, #title2 {
+    #title1 {
         justify-content: center;
         padding-left: 0;
     }
-    #buttons1, #buttons2 {
+    #buttons1 {
         text-align: center;
     }
     header .logo img {
         height: 60px;
         width: 60px;
     }
+    .container {
+        grid-template-rows: 0.2fr 0.4fr 0.2fr 0.4fr 0.6fr;
+     }
 }
 @media(max-width: 370px) {
     #buttons1 button {
         padding: 15px 30px 15px 30px;
      }
-     #buttons2 button {
-        padding: 15px 30px 15px 30px;
+     .container {
+        grid-template-rows: 0.2fr 0.4fr 0.2fr 0.4fr 0.6fr;
      }
 }
 @media(max-width: 290px) {
     #buttons1 button {
         padding: 15px 30px 15px 30px;
      }
-     #buttons2 button {
-        padding: 15px 30px 15px 30px;
+     .container {
+        grid-template-rows: 0.2fr 0.4fr 0.2fr 0.4fr 0.6fr;
      }
 }

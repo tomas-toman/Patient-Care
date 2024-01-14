@@ -16,6 +16,7 @@
     $data = pg_fetch_assoc($result);
 
     $_SESSION['data_nazev'] = $data['nazev'];
+    $_SESSION['data_img_src'] = $data['img_src'];
 
     // Získání dat o pokojích
     $result2 = pg_prepare($conn, "my_query2", 'SELECT * FROM pokoje WHERE fk_oddeleni = $1');

@@ -113,7 +113,7 @@ header label {
 .container {
     display: grid;
     min-height: 86.5vh;
-    grid-template-columns: 1fr 0.5fr;
+    grid-template-columns: 6fr 4fr;
     grid-template-rows: 0.2fr 1fr;
     grid-template-areas: 
         "title map"
@@ -153,16 +153,16 @@ header label {
     box-shadow: 0 5px #5a7ca7;
  }
  #map {
-    background-color: var(--secondary);
-    border-radius: 20px;
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
-    color: var(--primary);
-    font-size: 30px;
     grid-area: map;
  }
+ #map img {
+    height: auto;
+    width: 100%;
+}
 
 @media(max-width:1263px) {
     header {
@@ -208,21 +208,21 @@ header label {
             "map";
         padding: 20px;
     }
-    #map {
-        margin-top: 20px;
-    }
 }
 @media(max-width: 550px) {
     #title {
         justify-content: center;
         padding-left: 0;
     }
-    #buttons1, #buttons2 {
+    #buttons1 {
         text-align: center;
     }
     header .logo img {
         height: 60px;
         width: 60px;
+    }
+    .container {
+        grid-template-rows: 0.2fr 1fr 1fr;
     }
 }
 @media(max-width: 370px) {
@@ -232,4 +232,7 @@ header label {
     #buttons1 button, #buttons2 button {
         padding: 10px 25px 10px 25px;
      }
+    .container {
+        grid-template-rows: 0.2fr 1fr 0.5fr;
+    }
 }

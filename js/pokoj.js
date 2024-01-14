@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (mediaQuery1.matches) {
                 container.style.gridTemplateColumns = '1fr';
-                container.style.gridTemplateRows = '0.2fr 0.2fr 1fr 1fr';
+                container.style.gridTemplateRows = '0.2fr 0.2fr 0.5fr 1fr';
                 container.style.gridTemplateAreas = `
                 "title"
                 "buttons1"

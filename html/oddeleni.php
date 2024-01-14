@@ -60,7 +60,9 @@
                 <?php endforeach; ?>
             </form>
         </div>
-        <div id="map">Mapa nemocnice</div>
+        <div id="map">
+            <img  id="mapImage" src="<?php echo $_SESSION['data_img_src']?>" alt="">
+        </div>
     </div>
 </body>
 </html>

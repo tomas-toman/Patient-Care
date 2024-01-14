@@ -153,15 +153,15 @@ header label {
     box-shadow: 0 5px #5a7ca7;
  }
  #map {
-    background-color: var(--secondary);
-    border-radius: 20px;
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
-    color: var(--primary);
-    font-size: 30px;
     grid-area: map;
+ }
+ #map img {
+    height: auto;
+    width: 60%;
  }
  #info {
     grid-area: info;
@@ -233,7 +233,7 @@ header label {
     color: #FF6464;
  }
 
-@media(max-width:1263px) {
+@media(max-width:1270px) {
     header {
         padding: 25px;
     }
@@ -322,8 +322,5 @@ header label {
     }
     #info {
         width: 200px;
-    }
-    #map {
-        width: 240px;
     }
 }

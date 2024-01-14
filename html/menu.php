@@ -55,12 +55,14 @@
         </div>
         <div id="buttons1">
             <form action="../php/oddeleni_presmerovac.php" method="post">
-                <button type="submit" name="button" value="1">Chirurgické odd.</button>
-                <button type="submit" name="button" value="2">JIP</button>
-                <button type="submit" name="button" value="3">Gynekologicko-porodnické odd.</button>
-                <button type="submit" name="button" value="4">Traumatologické odd.</button>
-                <button type="submit" name="button" value="5">ORL a CHHK</button>
-                <button type="submit" name="button" value="6">Novorozenecké odd.</button>
+                <button type="submit" name="button" value="1" onmouseover="changeImage('../img/Chirurgie.png')" onmouseout="changeImage('../img/Mapa 1. patro.png')">Chirurgické odd.</button>
+                <button type="submit" name="button" value="5" onmouseover="changeImage('../img/ORL a CHHK.png')" onmouseout="changeImage('../img/Mapa 1. patro.png')">ORL a CHHK</button>
+                <button type="submit" name="button" value="10" onmouseover="changeImage('../img/VIN I.png')" onmouseout="changeImage('../img/Mapa 1. patro.png')">VIN I.</button>
+                <button type="submit" name="button" value="11" onmouseover="changeImage('../img/VIN II.png')" onmouseout="changeImage('../img/Mapa 1. patro.png')">VIN II.</button>
+                <button type="submit" name="button" value="4" onmouseover="changeImage('../img/Traumatologické odd.png')" onmouseout="changeImage('../img/Mapa 1. patro.png')">Traumatologické odd.</button>
+                <button type="submit" name="button" value="14" onmouseover="changeImage('../img/Neurologické odd.png')" onmouseout="changeImage('../img/Mapa 1. patro.png')">Neurologické odd.</button>
+                <button type="submit" name="button" value="12" onmouseover="changeImage('../img/Urologické odd.png')" onmouseout="changeImage('../img/Mapa 1. patro.png')">Urologické odd.</button>
+
             </form>
         </div>
         <div id="title2">
@@ -68,18 +70,20 @@
         </div>
         <div id="buttons2">
             <form action="../php/oddeleni_presmerovac.php" method="post">
-                <button type="submit" name="button" value="7">ARO</button>
-                <button type="submit" name="button" value="8">Dětské odd.</button>
-                <button type="submit" name="button" value="9">DIP</button>
-                <button type="submit" name="button" value="10">VIN I.</button>
-                <button type="submit" name="button" value="11">VIN II.</button>
-                <button type="submit" name="button" value="12">Urologické odd.</button>
-                <button type="submit" name="button" value="13">TRN</button></a>
-                <button type="submit" name="button" value="14">Neurologické odd.</button>
+                <button type="submit" name="button" value="6" onmouseover="changeImage('../img/Novorozenecké odd.png')" onmouseout="changeImage('../img/Mapa 2. patro.png')">Novorozenecké odd.</button>
+                <button type="submit" name="button" value="3" onmouseover="changeImage('../img/Gynekologicko-porodnické odd.png')" onmouseout="changeImage('../img/Mapa 2. patro.png')">Gynekologicko-porodnické odd.</button>
+                <button type="submit" name="button" value="2" onmouseover="changeImage('../img/JIP.png')" onmouseout="changeImage('../img/Mapa 2. patro.png')">JIP</button>
+                <button type="submit" name="button" value="7" onmouseover="changeImage('../img/ARO.png')" onmouseout="changeImage('../img/Mapa 2. patro.png')">ARO</button>
+                <button type="submit" name="button" value="8" onmouseover="changeImage('../img/Dětské odd.png')" onmouseout="changeImage('../img/Mapa 2. patro.png')">Dětské odd.</button>
+                <button type="submit" name="button" value="9" onmouseover="changeImage('../img/DIP.png')" onmouseout="changeImage('../img/Mapa 2. patro.png')">DIP</button>
+                <button type="submit" name="button" value="13" onmouseover="changeImage('../img/TRN.png')" onmouseout="changeImage('../img/Mapa 2. patro.png')">TRN</button></a>
             </form>
         </div>
-        <div id="map">Mapa nemocnice</div>
+        <div id="map">
+            <img  id="mapImage" src="../img/Mapa 1. patro.png" alt="">
+        </div>
     </div>
+<script src="../js/zmenaMapy.js"></script>
 </body>
 </html>
 
