@@ -161,7 +161,7 @@ header label {
  }
  #map img {
     height: auto;
-    width: 60%;
+    width: 55%;
  }
  #info {
     grid-area: info;

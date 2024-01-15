@@ -29,8 +29,8 @@
                 <li><a href="#" class="current_page">Navigační menu</a></li>
                 <li><a href="#">Zaměstnanci <i class="fa-solid fa-caret-down fa-rotate-90"></i></a>
                     <ul>
-                        <li><a href="#">Výpis zamětnanců</a></li>
-                        <li><a href="#">Přidání zamětnance</a></li>
+                        <li><a href="#">Výpis zaměstnanců</a></li>
+                        <li><a href="#">Přidání zaměstnance</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Pacienti <i class="fa-solid fa-caret-down fa-rotate-90"></i></a>
