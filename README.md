@@ -8,15 +8,6 @@ Patient care je webová aplikace, která slouží jako databázový systém pro 
   npm install
   npm start
 ```
-## Použité jazyky
-### 1. HTML
-Je zkratka pro hypertextový značkovací jazyk, který se používá k vytváření obsahu webové stránky. [(1)](https://web.vavyskov.cz/znackovaci-jazyk.html)
-### 2. CSS
-Je zkratka z anglického Cascading Style Sheets (kaskádové styly). Jazyk CSS slouží k definování formátu (formy, vzhledu) webové stránky a je nadstavbou HTML. [(2)](http://home.ef.jcu.cz/~inrem/edu/infa/html/css-pokrocile.html)
-### 3. PHP
-Je programovací jazyk který se zpracovává na straně serveru narozdíl od JavaScriptu který se vykoná až v prohlížeči. Funguje to tak, že klient zadá požadavek server to zpracuje a klientovi ze serveru přijde jen výsledek ve formě čistého html. [(3)](https://www.jakdelatweby.cz/php/uvod-do-php.php)
-### 4. JavaScript
-Je multiplatformní, objektově orientovaný, událostmi řízený skriptovací jazyk. [(4)](https://cs.wikipedia.org/wiki/JavaScript)
 ## Funkcionalita
 Aplikace disponuje funkcemi jako je horní navigační panel, pomocí kterého se uživatel dostane téměř kamkoli na webové aplikaci, tlačítka s odkazy na jednotlivé oddělení a patra nemocnice, samotné pokoje kde zaměstnanci mohou přiřazovat pacienty lůžkům a zobrazit si celou jejich dokumetaci, logem akcí na zobrazení provedených akcí v databázi a tabulky se všemy pacienty a zaměstnanci.
 ## Cíle projektu
