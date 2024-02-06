@@ -174,7 +174,7 @@ header label {
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 2px 20px var(--secondary);
-    height: 550px;
+    height: auto;
     width: 400px;
  }
  #info-content{
@@ -191,12 +191,10 @@ header label {
     display: flex;
     flex-direction: column;
  }
- #paragraphs {
-    margin-top: 15px;
- }
  #info-card i {
     font-size: 150px;
     color: #394f69;
+    margin-bottom: 20px;
  }
  #dokument-btn{
     border: 2px solid #4e6c91;
@@ -232,7 +230,105 @@ header label {
     background-color: var(--primary);
     color: #FF6464;
  }
-
+ #add-btn {
+    border: 2px solid #2fb450;
+    background-color: #79d290;
+    color: var(--primary);
+    padding: 10px 65px 10px 65px;
+    border-radius: 30px;
+    transition: 0.15s;
+    box-shadow: 0px 5px #269141;
+    margin: 10px;
+    font-weight: bolder;
+    font-size: 20px;
+ }
+ #add-btn:hover {
+    cursor: pointer;
+    background-color: var(--primary);
+    color: #269141;
+ }
+ #rem-btn {
+    border: 2px solid #ac0f0f;
+    background-color: #cc1616;
+    color: var(--primary);
+    padding: 10px 65px 10px 65px;
+    border-radius: 30px;
+    transition: 0.15s;
+    box-shadow: 0px 5px #810000;
+    margin: 10px;
+    font-weight: bolder;
+    font-size: 20px;
+ }
+ #rem-btn:hover {
+    cursor: pointer;
+    background-color: var(--primary);
+    color: #810000;
+ }
+ #patient-table{
+    height: 60%;
+    width: 50%;
+    background-color: var(--primary);
+    color: var(--secondary);
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    display: none;
+    padding: 0 0 20px 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    box-shadow: 0 2px 20px var(--secondary);
+ }
+ #info-table{
+    height: auto;
+    width: 100%;
+ }
+ #info-table td {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+ }
+ #add-patient-btn {
+    border: 2px solid #2fb450;
+    background-color: #79d290;
+    color: var(--primary);
+    padding: 7.5px 55px 7.5px 55px;
+    border-radius: 30px;
+    transition: 0.15s;
+    box-shadow: 0px 5px #269141;
+    font-weight: bolder;
+    font-size: 20px;
+    margin: 7.5px 0 7.5px 0;
+ }
+ #add-patient-btn:hover {
+    cursor: pointer;
+    background-color: var(--primary);
+    color: #269141;
+ }
+ #close-table-btn {
+    background-color: transparent;
+    border: none;
+ }
+ #close-table-btn:hover {
+    cursor: pointer;
+ }
+ #close-table-btn i {
+    font-size: 30px;
+    color: var(--secondary);
+ }
+ #header-table {
+    background-color: white;
+    top: 0;
+    position: sticky;
+    z-index: 100;
+ }
+ #header-table th {
+    padding: 15px;
+    font-size: 20px;
+    color: var(--secondary);
+    font-weight: bolder;
+ }
 @media(max-width:1270px) {
     header {
         padding: 25px;
@@ -324,3 +420,20 @@ header label {
         width: 200px;
     }
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 4px rgb(165, 165, 165);
+    border-radius: 7.5px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--secondary);
+    border-radius: 7.5px;
+  }

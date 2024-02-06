@@ -57,7 +57,9 @@
             <?php 
             $i = 1;
             foreach($_SESSION['data_luzka'] as $luzka): ?>
-                <button id="bed-value" onmouseover="changeImage('../img/Lůžko <?php echo $i; ?>.png')" onmouseout="changeImage('../img/Pokoj.png')">Lůžko č. <?php echo $luzka['cislo_luzka']; ?></button>
+                <form action="../php/info-card.php" method="post">
+                    <button type="submit" class="bed-value" name="button" value="<?php echo $i?>" onmouseover="changeImage('../img/Lůžko <?php echo $i; ?>.png')" onmouseout="changeImage('../img/Pokoj.png')">Lůžko č. <?php echo $luzka['cislo_luzka']; ?></button>
+                </form>
             <?php 
             $i++;
             endforeach; ?>
@@ -65,21 +67,32 @@
         <div id="info">
                 <div id="info-card">
                     <i class="fa-solid fa-user" id="info-content"></i>
-                    <div id="paragraphs"></div>
-                    <p>ID: </p>
-                    <p>Jméno: </p>
-                    <p>Příjmení: </p>
-                    <p>Pohlaví: </p>
-                    <p>Datum narození: </p>
-                    <p>Rodné číslo: </p>
+                    <p id="jmeno">Jméno: </p>
+                    <p id="prijmeni">Příjmení: </p>
+                    <p id="datum_narozeni">Datum narození: </p>
+                    <p id="rodne_cislo">Rodné číslo: </p>
                     <div id="info-content">
                         <button id="dokument-btn">Dokumentace</button>
+                        <form action="../php/tabulka_pacientu.php"><button id="add-btn">Přidat</button></form>
+                        <form action="../php/odebrat_pacienta.php"><button id="rem-btn">Odebrat</button></form>
                         <button id="close-btn">Zavřít</button>
                     </div>
                 </div>
         </div>
         <div id="map">
             <img  id="mapImage" src="../img/Pokoj.png" alt="">
+        </div>
+        <div id="patient-table">
+            <table id="info-table">
+                <tr id="header-table">
+                    <th>Rodné číslo</th>
+                    <th>Jméno</th>
+                    <th>Příjmení</th>
+                    <th>Datum narození</th>
+                    <th></th>
+                    <th><button id="close-table-btn"><i class="fa fa-times"></i></button></th>
+                </tr>
+            </table>
         </div>
     </div>  
 <script src="../js/pokoj.js"></script>
