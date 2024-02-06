@@ -19,7 +19,7 @@ Aplikace disponuje funkcemi jako je horní navigační panel, pomocí kterého s
 - [x]  Navrhnout logo a vytvořit 2D grafické zpracování nemocnice z ptačí perspektivy.
 - [x]  Dokončit přihlašovací stránku a přidat menu s odkazy na jednotlivá patra, místnosti a pokoje nemocnice.
 - [x]  Implementovat zobrazovací tabulku s informacemi o pacientech a jejich léčbě.
-- [ ]  Přidat možnost přidávat a odebírat pacienty z lůžka v nemocnici.
+- [x]  Přidat možnost přidávat a odebírat pacienty z lůžka v nemocnici.
 - [ ]  Vytvořit stránku s detailními informacemi o pacientovi a jeho léčebném plánu.
 - [ ]  Zobrazit všechny zaměstnance a pacienty nemocnice a umožnit jejich přidání/odebrání.
 - [ ]  Vytvořit log akcí pro sledování změn v databázi.
