@@ -110,93 +110,51 @@ header label {
     color: var(--primary);
     box-shadow: 0 5px #5a7ca7;
 }
-.current_page {
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-}
-.container {
+#container {
     display: grid;
     min-height: 86.5vh;
-    grid-template-columns: 6fr 4fr;
-    grid-template-rows: 0.1fr 0.8fr 0.1fr 0.8fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.025fr 1fr;
     grid-template-areas: 
-        "title1 map"
-        "buttons1 map"
-        "title2 map"
-        "buttons2 map";
+        "title"
+        "info";
     padding: 20px;
 }
- #title1 {
-    grid-area: title1;
-    font-size: 35px;
-    color: var(--secondary);
-    align-items: center;
+ #info {
     display: flex;
-    padding-left: 10px;
+    flex-wrap: wrap;
+    grid-area: info;
  }
- #title2 {
-    grid-area: title2;
-    font-size: 35px;
-    color: var(--secondary);
-    align-items: center;
-    display: flex;
-    padding-left: 10px;
- }
- #buttons1 {
-    grid-area: buttons1;
- }
- #buttons1 button {
-    border: 2px solid var(--secondary);
-    background-color: var(--primary);
-    color: var(--secondary);
-    padding: 10px 75px 10px 75px;
-    border-radius: 30px;
-    transition: 0.15s;
-    box-shadow: 0px 5px var(--secondary);
-    margin: 10px;
-    font-weight: bolder;
-    font-size: 20px;
- }
- #buttons1 button:hover {
-    cursor: pointer;
-    background-color: var(--secondary);
-    color: var(--primary);
-    box-shadow: 0 5px #5a7ca7;
- }
- #buttons2 {
-    grid-area: buttons2;
- }
- #buttons2 button {
-    border: 2px solid var(--secondary);
-    background-color: var(--primary);
-    color: var(--secondary);
-    padding: 10px 75px 10px 75px;
-    border-radius: 30px;
-    transition: 0.15s;
-    box-shadow: 0px 5px var(--secondary);
-    margin: 10px;
-    font-weight: bolder;
-    font-size: 20px;
- }
- #buttons2 button:hover {
-    cursor: pointer;
-    background-color: var(--secondary);
-    color: var(--primary);
-    box-shadow: 0 5px #5a7ca7;
- }
- #map {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    grid-area: map;
- }
-#map img {
-    height: auto;
+ #info table {
     width: 100%;
-}
+    border-collapse: collapse;
+    margin: 20px 0;
+ }
+ #title {
+    grid-area: title;
+    color: var(--secondary);
+    font-size: 30px;
+    justify-content: center;
+    display: flex;
+ }
+ #info table th {
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+    text-align: left;
+    padding: 10px;
+ }
+ #info table tr {
+    background-color: var(--primary);
+    color: var(--secondary);
+    padding: 10px;
+ }
+ #info table td {
+    border: 1px solid var(--secondary);
+    padding: 10px;
+ }
 
-@media(max-width:1263px) {
+@media(max-width:1270px) {
     header {
         padding: 25px;
     }
@@ -229,51 +187,32 @@ header label {
         text-align:initial;
         padding: 35px;
     }
-    .container {
-        grid-template-columns: 1fr;
-        grid-template-rows: 0.2fr 0.4fr 0.2fr 0.4fr 1fr;
-        grid-template-areas: 
-            "title1"
-            "buttons1"
-            "title2"
-            "buttons2"
-            "map";
-    }
 }
 @media(max-width: 550px) {
-    #title1 {
-        justify-content: center;
-        padding-left: 0;
-    }
-    #buttons1 {
-        text-align: center;
-    }
     header .logo img {
         height: 60px;
         width: 60px;
     }
-    .container {
-        grid-template-rows: 0.2fr 0.4fr 0.2fr 0.4fr 0.6fr;
-     }
 }
-@media(max-width: 370px) {
-    #buttons1 button {
-        padding: 15px 30px 15px 30px;
-     }
-     .container {
-        grid-template-rows: 0.2fr 0.4fr 0.2fr 0.4fr 0.6fr;
-     }
-}
-@media(max-width: 290px) {
-    #buttons1 button {
-        padding: 15px 30px 15px 30px;
-     }
-     .container {
-        grid-template-rows: 0.2fr 0.4fr 0.2fr 0.4fr 0.6fr;
-     }
+@media(max-width: 450px) {
+    #title {
+        font-size: 20px;
+    }
+    #info table tr{
+        font-size: 10px;
+        padding: 2px;
+    }
+    #info table td{
+        font-size: 10px;
+        padding: 2px;
+    }
+    #info table th{
+        font-size: 10px;
+        padding: 2px;
+    }
 }
 
-::-webkit-scrollbar {
+  ::-webkit-scrollbar {
     width: 15px;
   }
   

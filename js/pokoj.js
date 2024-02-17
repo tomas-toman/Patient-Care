@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     var info = document.querySelector('#info');
     var container = document.querySelector('#container');
-    var mediaQuery1 = window.matchMedia('(max-width: 1263px)');
+    var mediaQuery1 = window.matchMedia('(max-width: 1270px)');
 
     function refreshInfoCard(buttonValue) {
         var xhr = new XMLHttpRequest();
@@ -102,27 +102,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 if (data) {
                     var table = document.getElementById('info-table');
+                    var tbody = table.querySelector('tbody');
 
-                    var rows = table.querySelectorAll('tr:not(:first-child)');
-                
-                    rows.forEach(function(row) {
-                        row.remove();
-                    });
+                    tbody.innerHTML = '';
 
                     data.forEach(item => {
                         const row = document.createElement('tr');
 
                         const rodne_cislo = document.createElement('td');
                         rodne_cislo.innerHTML = item.rodne_cislo;
+                        rodne_cislo.setAttribute('data-title', 'Rod. čís.');
 
                         const jmeno = document.createElement('td');
                         jmeno.innerHTML = item.jmeno;
+                        jmeno.setAttribute('data-title', 'Jméno');
 
                         const prijmeni = document.createElement('td');
                         prijmeni.innerHTML = item.prijmeni;
+                        prijmeni.setAttribute('data-title', 'Příjmení');
 
                         const datum_narozeni = document.createElement('td');
                         datum_narozeni.innerHTML = item.datum_narozeni;
+                        datum_narozeni.setAttribute('data-title', 'Dat. nar.');
 
                         const form = document.createElement('form');
                         form.method = 'post';
@@ -145,8 +146,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         button_cont.appendChild(form);
                         row.appendChild(button_cont);
 
-                        table.appendChild(row);
+                        tbody.appendChild(row);
                     });
+                    table.appendChild(tbody);
                 }
             }
         }

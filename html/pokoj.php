@@ -58,7 +58,7 @@
             $i = 1;
             foreach($_SESSION['data_luzka'] as $luzka): ?>
                 <form action="../php/info-card.php" method="post">
-                    <button type="submit" class="bed-value" name="button" value="<?php echo $i?>" onmouseover="changeImage('../img/Lůžko <?php echo $i; ?>.png')" onmouseout="changeImage('../img/Pokoj.png')">Lůžko č. <?php echo $luzka['cislo_luzka']; ?></button>
+                    <button type="submit" class="bed-value" name="button" value="<?php echo $i?>" onmouseover="changeImage('../img/Lůžko <?php echo $i; ?>.png')" onmouseout="changeImage('../img/Pokoj.png')">Lůžko č. <?php echo $i; ?></button>
                 </form>
             <?php 
             $i++;
@@ -72,7 +72,7 @@
                     <p id="datum_narozeni">Datum narození: </p>
                     <p id="rodne_cislo">Rodné číslo: </p>
                     <div id="info-content">
-                        <button id="dokument-btn">Dokumentace</button>
+                        <a href="./dokumentace.php"><button id="dokument-btn">Dokumentace</button></a>
                         <form action="../php/tabulka_pacientu.php"><button id="add-btn">Přidat</button></form>
                         <form action="../php/odebrat_pacienta.php"><button id="rem-btn">Odebrat</button></form>
                         <button id="close-btn">Zavřít</button>
@@ -84,14 +84,17 @@
         </div>
         <div id="patient-table">
             <table id="info-table">
-                <tr id="header-table">
-                    <th>Rodné číslo</th>
-                    <th>Jméno</th>
-                    <th>Příjmení</th>
-                    <th>Datum narození</th>
-                    <th></th>
-                    <th><button id="close-table-btn"><i class="fa fa-times"></i></button></th>
-                </tr>
+                <thead>
+                    <tr id="header-table">
+                        <th class="second-header">Rodné číslo</th>
+                        <th class="second-header">Jméno</th>
+                        <th class="second-header">Příjmení</th>
+                        <th class="second-header">Datum narození</th>
+                        <th class="second-header"></th>
+                        <th class="primary-header"><button id="close-table-btn"><i class="fa fa-times"></i></button></th>
+                    </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
             </table>
         </div>
     </div>  

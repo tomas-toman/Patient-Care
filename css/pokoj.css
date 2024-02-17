@@ -266,7 +266,7 @@ header label {
  }
  #patient-table{
     height: 60%;
-    width: 50%;
+    width: 65%;
     background-color: var(--primary);
     color: var(--secondary);
     position: fixed;
@@ -378,7 +378,58 @@ header label {
     }
     #info{
         margin: 20px;
+        left: 50%;
     }
+}
+@media only screen and (max-width: 1400px) {
+	
+	#patient-table table, 
+	#patient-table thead, 
+	#patient-table tbody, 
+	#patient-table th, 
+	#patient-table td, 
+	#patient-table tr { 
+		display: block;
+	}
+ 
+	#patient-table thead tr .second-header { 
+        display: none;
+	}
+
+    #patient-table thead tr .primary-header { 
+        display: block;
+    }
+
+    #patient-table thead #header-table {
+        border-bottom: 1px solid #eee; 
+    }
+ 
+	#patient-table td { 
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+		white-space: normal;
+		text-align: left;
+	}
+
+    #patient-table td form  button{
+        text-align: center;
+        padding: 7.5px 20px 7.5px 20px;
+        font-size: 15px;
+    }
+ 
+	#patient-table td:before { 
+		position: absolute;
+		left: 6px;
+		padding-right: 10px; 
+		white-space: nowrap;
+		text-align: left;
+		font-weight: bold;
+        font-size: 15px;
+	}
+ 
+	#patient-table td:before { content: attr(data-title); }
 }
 @media(max-width: 550px) {
     #title {
@@ -417,22 +468,19 @@ header label {
         font-size: 15px;
     }
     #info {
-        width: 200px;
+        width: 90%;
     }
 }
 
-/* width */
-::-webkit-scrollbar {
+  ::-webkit-scrollbar {
     width: 15px;
   }
   
-  /* Track */
   ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 4px rgb(165, 165, 165);
     border-radius: 7.5px;
   }
   
-  /* Handle */
   ::-webkit-scrollbar-thumb {
     background: var(--secondary);
     border-radius: 7.5px;
