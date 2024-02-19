@@ -138,10 +138,12 @@ header label {
     display: flex;
  }
  #info table th {
+    width: 15%;
     background-color: var(--primary);
     color: var(--secondary);
     border: 1px solid var(--secondary);
-    text-align: left;
+    text-align: right;
+    vertical-align: top;
     padding: 10px;
  }
  #info table tr {
@@ -150,6 +152,7 @@ header label {
     padding: 10px;
  }
  #info table td {
+    width: 85%;
     border: 1px solid var(--secondary);
     padding: 10px;
  }

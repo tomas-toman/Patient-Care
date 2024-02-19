@@ -72,7 +72,7 @@
                     <p id="datum_narozeni">Datum narození: </p>
                     <p id="rodne_cislo">Rodné číslo: </p>
                     <div id="info-content">
-                        <a href="./dokumentace.php"><button id="dokument-btn">Dokumentace</button></a>
+                        <a href="../php/vypis_dokumentace.php"><button id="dokument-btn">Dokumentace</button></a>
                         <form action="../php/tabulka_pacientu.php"><button id="add-btn">Přidat</button></form>
                         <form action="../php/odebrat_pacienta.php"><button id="rem-btn">Odebrat</button></form>
                         <button id="close-btn">Zavřít</button>

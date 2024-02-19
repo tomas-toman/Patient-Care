@@ -50,104 +50,369 @@
         </nav>
     </header>
     <div id="container">
-        <p id="title">Dokumentace {jmeno} {prijmeni}</p>
+        <p id="title">Dokumentace <?php foreach($_SESSION['data_pacient'] as $pacient) {echo $pacient['jmeno'];}?> <?php foreach($_SESSION['data_pacient'] as $pacient) {echo $pacient['prijmeni'];}?></p>
         <div id="info">
             <table>
                 <tr>
                     <th>Rodné číslo:</th>
-                    <td>{rodne_cislo}</td>
+                    <td>
+                        <?php
+                            foreach($_SESSION['data_pacient'] as $pacient) {
+                                echo $pacient['rodne_cislo'];
+                            }
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>Jméno:</th>
-                    <td>{jmeno}</td>
+                    <td>
+                        <?php
+                            foreach($_SESSION['data_pacient'] as $pacient) {
+                                echo $pacient['jmeno'];
+                            }
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>Příjmení:</th>
-                    <td>{prijmeni}</td>
+                    <td>
+                        <?php
+                            foreach($_SESSION['data_pacient'] as $pacient) {
+                                echo $pacient['prijmeni'];
+                            }
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>Datum narození:</th>
-                    <td>{datum_narozeni}</td>
+                    <td>
+                        <?php
+                            foreach($_SESSION['data_pacient'] as $pacient) {
+                                echo $pacient['datum_narozeni'];
+                            }
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>Den hospitalizace:</th>
-                    <td>{den_hospitalizace}</td>
+                    <td>
+                        <?php
+                            foreach($_SESSION['data_pacient'] as $pacient) {
+                                if(isset($pacient['den_hospitalizace'])) {
+                                    echo $pacient['den_hospitalizace'];
+                                }
+                                else {
+                                    echo "-";
+                                }
+                            }
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>Režim/Operační den:</th>
-                    <td>{rezim_operacni_den}</td>
+                    <td>
+                        <?php
+                            foreach($_SESSION['data_pacient'] as $pacient) {
+                                if(isset($pacient['rezim_operacni_den'])) {
+                                    echo $pacient['rezim_operacni_den'];
+                                }
+                                else {
+                                    echo "-";
+                                }
+                            }
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>Diagnóza:</th>
-                    <td>{info_json}</td>
+                    <td>
+                        <?php
+                            foreach($_SESSION['data_pacient'] as $pacient) {
+                                if(isset($pacient['info_json'])) {
+                                    $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    echo $info_json['diagnoza'];
+                                }
+                                else {
+                                    echo "-";
+                                }
+                            }
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>Výška (cm):</th>
-                    <td>{info_json}</td>
+                    <td>
+                        <?php
+                            foreach($_SESSION['data_pacient'] as $pacient) {
+                                if(isset($pacient['info_json'])) {
+                                    $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    echo $info_json['vyska'];
+                                }
+                                else {
+                                    echo "-";
+                                }
+                            }
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>Váha (kg):</th>
-                    <td>{info_json}</td>
+                    <td>
+                        <?php
+                            foreach($_SESSION['data_pacient'] as $pacient) {
+                                if(isset($pacient['info_json'])) {
+                                    $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    echo $info_json['vaha'];
+                                }
+                                else {
+                                    echo "-";
+                                }
+                            }
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>Vědomí:</th>
-                    <td>{info_json}</td>
+                    <td>
+                        <?php
+                            foreach($_SESSION['data_pacient'] as $pacient) {
+                                if(isset($pacient['info_json'])) {
+                                    $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    echo $info_json['vedomi'];
+                                }
+                                else {
+                                    echo "-";
+                                }
+                            }
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>Mobilita, soběstačnost:</th>
-                    <td>{info_json}</td>
+                    <td>
+                        <?php
+                            foreach($_SESSION['data_pacient'] as $pacient) {
+                                if(isset($pacient['info_json'])) {
+                                    $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    echo $info_json['mobilita,sobestacnost'];
+                                }
+                                else {
+                                    echo "-";
+                                }
+                            }
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>Komunikace:</th>
-                    <td>{info_json}</td>
+                    <td>
+                        <?php
+                            foreach($_SESSION['data_pacient'] as $pacient) {
+                                if(isset($pacient['info_json'])) {
+                                    $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    echo $info_json['komunikace'];
+                                }
+                                else {
+                                    echo "-";
+                                }
+                            }
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>Kompenzační pomůcky:</th>
-                    <td>{info_json}</td>
+                    <td>
+                        <?php
+                            foreach($_SESSION['data_pacient'] as $pacient) {
+                                if(isset($pacient['info_json'])) {
+                                    $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    echo $info_json['kompenzacni_pomucky'];
+                                }
+                                else {
+                                    echo "-";
+                                }
+                            }
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>Dýchání:</th>
-                    <td>{info_json}</td>
+                    <td>
+                        <?php
+                            foreach($_SESSION['data_pacient'] as $pacient) {
+                                if(isset($pacient['info_json'])) {
+                                    $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    echo $info_json['dychani'];
+                                }
+                                else {
+                                    echo "-";
+                                }
+                            }
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>Výživa a tekutiny:</th>
-                    <td>{info_json}</td>
+                    <td>
+                        <?php
+                            foreach($_SESSION['data_pacient'] as $pacient) {
+                                if(isset($pacient['info_json'])) {
+                                    $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    echo $info_json['vyziva,tekutiny'];
+                                }
+                                else {
+                                    echo "-";
+                                }
+                            }
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>Vylučování moči:</th>
-                    <td>{info_json}</td>
+                    <td>
+                        <?php
+                            foreach($_SESSION['data_pacient'] as $pacient) {
+                                if(isset($pacient['info_json'])) {
+                                    $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    echo $info_json['vylucovani_moci'];
+                                }
+                                else {
+                                    echo "-";
+                                }
+                            }
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>Vylučovaní stolice:</th>
-                    <td>{info_json}</td>
+                    <td>
+                        <?php
+                            foreach($_SESSION['data_pacient'] as $pacient) {
+                                if(isset($pacient['info_json'])) {
+                                    $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    echo $info_json['vylucovani_stolice'];
+                                }
+                                else {
+                                    echo "-";
+                                }
+                            }
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>Vstupy:</th>
-                    <td>{info_json}</td>
+                    <td>
+                        <?php
+                            foreach($_SESSION['data_pacient'] as $pacient) {
+                                if(isset($pacient['info_json'])) {
+                                    $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    echo $info_json['vstupy'];
+                                }
+                                else {
+                                    echo "-";
+                                }
+                            }
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>Kůže:</th>
-                    <td>{info_json}</td>
+                    <td>
+                        <?php
+                            foreach($_SESSION['data_pacient'] as $pacient) {
+                                if(isset($pacient['info_json'])) {
+                                    $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    echo $info_json['kuze'];
+                                }
+                                else {
+                                    echo "-";
+                                }
+                            }
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>Bolest:</th>
-                    <td>{info_json}</td>
+                    <td>
+                        <?php
+                            foreach($_SESSION['data_pacient'] as $pacient) {
+                                if(isset($pacient['info_json'])) {
+                                    $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    echo $info_json['bolest'];
+                                }
+                                else {
+                                    echo "-";
+                                }
+                            }
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>Chování, spánek:</th>
-                    <td>{info_json}</td>
+                    <td>
+                        <?php
+                            foreach($_SESSION['data_pacient'] as $pacient) {
+                                if(isset($pacient['info_json'])) {
+                                    $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    echo $info_json['chovani,spanek'];
+                                }
+                                else {
+                                    echo "-";
+                                }
+                            }
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>Vyšetření:</th>
-                    <td>{info_json}</td>
+                    <td>
+                        <?php
+                            foreach($_SESSION['data_pacient'] as $pacient) {
+                                if(isset($pacient['info_json'])) {
+                                    $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    $vysetreni = str_replace("\n", '<br>', $info_json['vysetreni']);
+                                    echo $vysetreni;
+                                }
+                                else {
+                                    echo "-";
+                                }
+                            }
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>Léčba/Léky:</th>
-                    <td>{info_json}</td>
+                    <td>
+                    <?php
+                            foreach($_SESSION['data_pacient'] as $pacient) {
+                                if(isset($pacient['info_json'])) {
+                                    $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    $lecba_leky = str_replace("\n", '<br>', $info_json['lecba,leky']);
+                                    echo $lecba_leky;
+                                }
+                                else {
+                                    echo "-";
+                                }
+                            }
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>Ordinace/Ošetřovatelská péče:</th>
-                    <td>{info_json}</td>
+                    <td>
+                        <?php
+                            foreach($_SESSION['data_pacient'] as $pacient) {
+                                if(isset($pacient['info_json'])) {
+                                    $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    $ordinace_osetrovatelska_pece = str_replace("\n", '<br>', $info_json['ordinace,osetrovatelska_pece']);
+                                    echo $ordinace_osetrovatelska_pece;
+                                }
+                                else {
+                                    echo "-";
+                                }
+                            }
+                        ?>
+                    </td>
                 </tr>
             </table>
         </div>
