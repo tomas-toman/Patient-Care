@@ -20,7 +20,7 @@ Aplikace disponuje funkcemi jako je horní navigační panel, pomocí kterého s
 - [x]  Dokončit přihlašovací stránku a přidat menu s odkazy na jednotlivá patra, místnosti a pokoje nemocnice.
 - [x]  Implementovat zobrazovací tabulku s informacemi o pacientech a jejich léčbě.
 - [x]  Přidat možnost přidávat a odebírat pacienty z lůžka v nemocnici.
-- [ ]  Vytvořit stránku s detailními informacemi o pacientovi a jeho léčebném plánu.
+- [x]  Vytvořit stránku s detailními informacemi o pacientovi a jeho léčebném plánu.
 - [ ]  Zobrazit všechny zaměstnance a pacienty nemocnice a umožnit jejich přidání/odebrání.
 - [ ]  Vytvořit log akcí pro sledování změn v databázi.
 - [ ]  Navrhnout a implementovat zobrazování všech pacientů a jejich přiřazených pokojů v nemocnici.
