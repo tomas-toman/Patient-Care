@@ -29,13 +29,13 @@
                 <li><a href="./menu.php">Navigační menu</a></li>
                 <li><a href="#">Zaměstnanci <i class="fa-solid fa-caret-down fa-rotate-90"></i></a>
                     <ul>
-                        <li><a href="#">Výpis zaměstnanců</a></li>
+                        <form action="../php/vypis_zamestnancu.php"><button type="submit" class="proklik"><li>Výpis zaměstnanců</li></button></form>
                         <li><a href="#">Přidání zaměstnance</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Pacienti <i class="fa-solid fa-caret-down fa-rotate-90"></i></a>
                     <ul>
-                        <li><a href="#">Výpis pacientů</a></li>
+                    <form action="../php/vypis_pacientu.php"><button type="submit" class="proklik"><li>Výpis pacientů</li></button></form>
                         <li><a href="#">Přidání pacienta</a></li>
                     </ul>
                 </li>

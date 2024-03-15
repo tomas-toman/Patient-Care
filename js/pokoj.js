@@ -44,7 +44,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 button.classList.remove('active');
             });
 
+            
+            event.target.style.backgroundColor = 'var(--primary)';
+            event.target.style.color = 'var(--secondary)';
+            event.target.style.boxShadow = '0 5px var(--secondary)';
+
             event.target.classList.add('active');
+
+            if (event.target.classList.contains('active')) {
+                event.target.style.backgroundColor = 'var(--secondary)';
+                event.target.style.color = 'var(--primary)';
+                event.target.style.boxShadow = '0 5px #5a7ca7';
+            }
 
             info.style.display = 'flex';
 
@@ -61,6 +72,48 @@ document.addEventListener('DOMContentLoaded', function() {
                 `;
             } 
             else {
+                container.style.gridTemplateColumns = '0.8fr 1.2fr 1fr';
+                container.style.gridTemplateRows = '0.2fr 1fr';
+                container.style.gridTemplateAreas = `
+                "title info map"
+                "buttons1 info map"
+                `;
+            }
+        }
+    });
+
+    document.querySelector('#buttons1').addEventListener('click', function(event) {
+        if (event.target.classList.contains('bed-value')) {
+            event.preventDefault();
+
+            var buttons = document.querySelectorAll('.bed-value');
+            buttons.forEach(function(button) {
+                button.classList.remove('active');
+                button.style.backgroundColor = 'var(--primary)';
+                button.style.color = 'var(--secondary)';
+                button.style.boxShadow = '0 5px var(--secondary)';
+            });
+
+            event.target.style.backgroundColor = 'var(--secondary)';
+            event.target.style.color = 'var(--primary)';
+            event.target.style.boxShadow = '0 5px #5a7ca7';
+
+            event.target.classList.add('active');
+
+            info.style.display = 'flex';
+
+            refreshInfoCard(event.target.value);
+
+            if (mediaQuery1.matches) {
+                container.style.gridTemplateColumns = '1fr';
+                container.style.gridTemplateRows = '0.2fr 0.2fr 0.5fr 1fr';
+                container.style.gridTemplateAreas = `
+                "title"
+                "buttons1"
+                "info"
+                "map"
+                `;
+            } else {
                 container.style.gridTemplateColumns = '0.8fr 1.2fr 1fr';
                 container.style.gridTemplateRows = '0.2fr 1fr';
                 container.style.gridTemplateAreas = `

@@ -27,6 +27,7 @@ header {
     justify-content: space-between;
     padding: 0px 4%;
     z-index: 1000;
+    margin-bottom: 20px;
 }
 header .logo {
     font-size: 20px;
@@ -109,58 +110,16 @@ header label {
     color: var(--primary);
     box-shadow: 0 5px #5a7ca7;
 }
-.container {
-    display: grid;
-    min-height: 86.5vh;
-    grid-template-columns: 6fr 4fr;
-    grid-template-rows: 0.2fr 1fr;
-    grid-template-areas: 
-        "title map"
-        "buttons1 map";
-    padding: 20px;
+.current_page {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
 }
- #title {
-    grid-area: title;
-    font-size: 35px;
-    color: var(--secondary);
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    display: flex;
-    padding-left: 10px;
- }
- #buttons1 {
-    grid-area: buttons1;
-    text-align: center;
- }
- #buttons1 button {
-    border: 2px solid var(--secondary);
-    background-color: var(--primary);
-    color: var(--secondary);
-    padding: 15px 75px 15px 75px;
-    border-radius: 30px;
-    transition: 0.15s;
-    box-shadow: 0px 5px var(--secondary);
-    margin: 10px;
-    font-weight: bolder;
-    font-size: 20px;
- }
- #buttons1 button:hover {
-    cursor: pointer;
-    background-color: var(--secondary);
-    color: var(--primary);
-    box-shadow: 0 5px #5a7ca7;
- }
- #map {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    grid-area: map;
- }
- #map img {
-    height: auto;
+#employee-table {
     width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 20px;
 }
 .navbar .proklik{
     background-color: transparent;
@@ -177,6 +136,64 @@ header label {
     text-decoration: underline;
     text-decoration-thickness: 2px;
     cursor: pointer;
+}
+.container {
+    overflow-x: auto;
+}
+.container .table-head th{
+    text-align: center;
+    padding: 20px;
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+.container .table-body td{
+    background-color: var(--primary);
+    border-bottom: 1px solid var(--secondary);
+    text-align: center;
+    padding: 10px;
+}
+.container .add-btn {
+    padding: 10px 30px;
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: none;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: 0.15s;
+    box-shadow: 0px 5px #5a7ca7;
+    transition: 0.5s;
+}
+.container .add-btn:hover {
+    cursor: pointer;
+    background-color: #7dade9;
+    color: var(--primary);
+}
+
+.container .delete-btn {
+    padding: 10px 30px;
+    background-color: rgb(235, 81, 81);
+    color: var(--primary);
+    border: none;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: 0.15s;
+    box-shadow: 0px 5px #a14242;
+    transition: 0.5s;
+}
+.container .delete-btn:hover {
+    cursor: pointer;
+    background-color: rgb(205, 70, 70);
+    box-shadow: 0px 5px #853636;
+}
+#search {
+    padding: 10px 20px;
+    border: 3px solid var(--secondary);
+    border-radius: 25px;
+    font-size: 20px;
+    transition: 0.15s;
+    display: flex;
+    margin: 0 20px 0 auto;
+    background-color: var(--primary);
 }
 
 @media(max-width:1263px) {
@@ -212,43 +229,15 @@ header label {
         text-align:initial;
         padding: 35px;
     }
-    .container {
-        display: grid;
-        min-height: 86.5vh;
-        grid-template-columns: 1fr;
-        grid-template-rows: 0.2fr 1fr 2fr;
-        grid-template-areas: 
-            "title"
-            "buttons1"
-            "map";
-        padding: 20px;
-    }
 }
 @media(max-width: 550px) {
-    #title {
-        justify-content: center;
-        padding-left: 0;
-    }
-    #buttons1 {
-        text-align: center;
-    }
     header .logo img {
         height: 60px;
         width: 60px;
     }
-    .container {
-        grid-template-rows: 0.2fr 1fr 1fr;
-    }
-}
-@media(max-width: 370px) {
-    #title p {
-        font-size: 25px;
-    }
-    #buttons1 button, #buttons2 button {
-        padding: 10px 25px 10px 25px;
-     }
-    .container {
-        grid-template-rows: 0.2fr 1fr 0.5fr;
+    #search {
+        padding: 10px 15px;
+        font-size: 15px;
     }
 }
 

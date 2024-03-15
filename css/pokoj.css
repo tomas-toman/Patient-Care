@@ -70,7 +70,6 @@ header .navbar ul li ul {
 }
 header .navbar ul li ul li{
     width: 100%;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 header .navbar ul li:hover > ul {
     display: initial;
@@ -329,6 +328,24 @@ header label {
     color: var(--secondary);
     font-weight: bolder;
  }
+
+ .navbar .proklik{
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    font-size: 20px;
+    padding: 35px;
+    display: block;
+    color: var(--secondary);
+    font-weight: bolder;
+    text-align: left;
+}
+.navbar form .proklik li:hover{
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    cursor: pointer;
+}
+
 @media(max-width:1270px) {
     header {
         padding: 25px;
