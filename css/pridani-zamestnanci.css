@@ -113,14 +113,7 @@ header label {
 .current_page {
     text-decoration: underline;
     text-decoration-thickness: 2px;
-    text-decoration-color: var(--secondary);
-}
-#employee-table {
-    width: 100%;
-    margin: 0 auto;
-    border-collapse: collapse;
-    border-spacing: 0;
-    margin-top: 20px;
+    color: var(--secondary);
 }
 .navbar .proklik{
     background-color: transparent;
@@ -146,79 +139,48 @@ header label {
     cursor: pointer;
 }
 .container {
-    overflow-x: auto;
-    overflow-y: auto;
-}
-.container .table-head th{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 20px;
+    min-height: 80vh;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+h1 {
+    margin-bottom: 20px;
+    color: var(--secondary);
+}
+input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid var(--secondary);
+    border-radius: 50px;
+    transition: 0.15s;
+}
+input:focus {
+    outline: none;
+}
+#add-btn {
+    width: 40%;
+    padding: 10px 20px 10px 20px;
+    margin: 10px 0;
+    border: 2px solid #5a7ca7;
+    border-radius: 50px;
+    transition: 0.15s;
     background-color: var(--secondary);
     color: var(--primary);
-}
-.container .table-body td{
-    background-color: var(--primary);
-    border-bottom: 1px solid var(--secondary);
-    text-align: center;
-    padding: 10px;
-}
-.container .add-btn {
-    padding: 10px 30px;
-    background-color: var(--primary);
-    color: var(--secondary);
-    border: none;
-    border-radius: 25px;
-    font-weight: 500;
-    transition: 0.15s;
     box-shadow: 0px 5px #5a7ca7;
-    transition: 0.5s;
 }
-.container .add-btn:hover {
+#add-btn:hover {
     cursor: pointer;
-    background-color: #7dade9;
-    color: var(--primary);
-}
-
-.container .delete-btn {
-    padding: 10px 30px;
-    background-color: rgb(235, 81, 81);
-    color: var(--primary);
-    border: none;
-    border-radius: 30px;
-    font-weight: 500;
-    transition: 0.15s;
-    box-shadow: 0px 5px #a14242;
-    transition: 0.5s;
-}
-.container .delete-btn:hover {
-    cursor: pointer;
-    background-color: rgb(205, 70, 70);
-    box-shadow: 0px 5px #853636;
-}
-.container .dokument-btn {
-    padding: 10px 30px;
-    background-color: rgb(57, 88, 223);
-    color: var(--primary);
-    border: none;
-    border-radius: 30px;
-    font-weight: 500;
-    transition: 0.15s;
-    box-shadow: 0px 5px rgb(51, 69, 148);
-    transition: 0.5s;
-}
-.container .dokument-btn:hover {
-    cursor: pointer;
-    background-color: rgb(52, 80, 206);
-    box-shadow: 0px 5px rgb(43, 58, 124);
-}
-#search {
-    padding: 10px 20px;
-    border: 3px solid var(--secondary);
-    border-radius: 25px;
-    font-size: 20px;
-    transition: 0.15s;
-    display: flex;
-    margin: 0 20px 0 auto;
-    background-color: var(--primary);
+    background-color: #6c94c9;
 }
 
 @media(max-width:1263px) {
@@ -258,10 +220,6 @@ header label {
     header .logo img {
         height: 60px;
         width: 60px;
-    }
-    #search {
-        padding: 10px 15px;
-        font-size: 15px;
     }
 }
 

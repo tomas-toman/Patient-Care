@@ -42,16 +42,16 @@
                 <li><a href="#">Zaměstnanci <i class="fa-solid fa-caret-down fa-rotate-90"></i></a>
                     <ul>
                         <form action="../php/vypis_zamestnancu.php"><button type="submit" class="proklik"><li>Výpis zaměstnanců</li></button></form>
-                        <li><a href="#">Přidání zaměstnance</a></li>
+                        <li><a href="./pridani-zamestnanci.php">Přidání zaměstnance</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Pacienti <i class="fa-solid fa-caret-down fa-rotate-90"></i></a>
                     <ul>
                     <form action="../php/vypis_pacientu.php"><button type="submit" class="proklik"><li class="current_page">Výpis pacientů</li></button></form>
-                        <li><a href="#">Přidání pacienta</a></li>
+                        <li><a href="./pridani-pacienti.php">Přidání pacienta</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Log akcí</a></li>
+                <li><a href="../php/log-vypis.php">Log akcí</a></li>
                 <li>
                     <div class="logged">
                         <p>Jste přihlášen/a jako <?=$_SESSION['user_jmeno'] . " " . $_SESSION['user_prijmeni']?></p>
@@ -73,7 +73,7 @@
                     <th>Oddělení</th>
                     <th>Číslo pokoje</th>
                     <th>Číslo lůžka</th>
-                    <th><button class="add-btn">Přidat</button></th>
+                    <th><a href="./pridani-pacienti.php"><button class="add-btn">Přidat</button></a></th>
                 </tr>
                 <tbody id="table-tbody">
                 <?php
@@ -86,7 +86,10 @@
                         echo "<td>" . $row['nazev'] . "</td>";
                         echo "<td>" . $row['cislo_pokoje'] . "</td>";
                         echo "<td>" . $row['cislo_luzka'] . "</td>";
-                        echo '<form><td><button value=' . $row["fk_pacient"] . ' class="delete-btn">Smazat</button></td></form>';
+                        echo "<td>";
+                        echo '<form action="../php/presmerovani_dokumentace.php" method="post" style="display: inline-block; margin: 0; padding: 10px;"><button value=' . $row["fk_pacient"] . ' class="dokument-btn" name="button" type="submit">Dokumentace</button></form>';
+                        echo '<form action="../php/smazat_pacienta.php" method="post" style="display: inline-block; margin: 0; padding: 10px;"><button value=' . $row["fk_pacient"] . ' class="delete-btn" name="delete-btn" type="submit">Smazat</button></form>';
+                        echo "</td>";
                         echo "</tr>";
                     }
                     foreach ($_SESSION['data_pacienti_bez'] as $row) {
@@ -98,7 +101,10 @@
                         echo "<td>-</td>";
                         echo "<td>-</td>";
                         echo "<td>-</td>";
-                        echo '<form><td><button value=' . $row["fk_pacient"] . ' class="delete-btn">Smazat</button></td></form>';
+                        echo "<td>";
+                        echo '<form action="../php/presmerovani_dokumentace.php" method="post" style="display: inline-block; margin: 0; padding: 10px;"><button value=' . $row["fk_pacient"] . ' class="dokument-btn" name="button" type="submit">Dokumentace</button></form>';
+                        echo '<form action="../php/smazat_pacienta.php" method="post" style="display: inline-block; margin: 0; padding: 10px;"><button value=' . $row["fk_pacient"] . ' class="delete-btn" name="delete-btn" type="submit">Smazat</button></form>';
+                        echo "</td>";
                         echo "</tr>";
                     }
                 ?>

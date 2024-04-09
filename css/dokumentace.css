@@ -166,9 +166,16 @@ header label {
     font-weight: bolder;
     text-align: left;
 }
+.navbar form {
+    background-color: #eaf4ff;
+}
+.navbar form .proklik{
+    width: 100%;
+}
 .navbar form .proklik li:hover{
     text-decoration: underline;
     text-decoration-thickness: 2px;
+    border-bottom: none;
     cursor: pointer;
 }
 
@@ -189,7 +196,6 @@ header label {
     }
     header .navbar ul li {
         width: 100%;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
     header .navbar ul li ul {
         position: relative;
@@ -204,6 +210,9 @@ header label {
     .logged {
         text-align:initial;
         padding: 35px;
+    }
+    #title {
+        text-align: center;
     }
 }
 @media(max-width: 550px) {

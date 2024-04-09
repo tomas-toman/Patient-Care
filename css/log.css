@@ -27,7 +27,7 @@ header {
     justify-content: space-between;
     padding: 0px 4%;
     z-index: 1000;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 header .logo {
     font-size: 20px;
@@ -113,14 +113,6 @@ header label {
 .current_page {
     text-decoration: underline;
     text-decoration-thickness: 2px;
-    text-decoration-color: var(--secondary);
-}
-#employee-table {
-    width: 100%;
-    margin: 0 auto;
-    border-collapse: collapse;
-    border-spacing: 0;
-    margin-top: 20px;
 }
 .navbar .proklik{
     background-color: transparent;
@@ -145,71 +137,6 @@ header label {
     border-bottom: none;
     cursor: pointer;
 }
-.container {
-    overflow-x: auto;
-    overflow-y: auto;
-}
-.container .table-head th{
-    text-align: center;
-    padding: 20px;
-    background-color: var(--secondary);
-    color: var(--primary);
-}
-.container .table-body td{
-    background-color: var(--primary);
-    border-bottom: 1px solid var(--secondary);
-    text-align: center;
-    padding: 10px;
-}
-.container .add-btn {
-    padding: 10px 30px;
-    background-color: var(--primary);
-    color: var(--secondary);
-    border: none;
-    border-radius: 25px;
-    font-weight: 500;
-    transition: 0.15s;
-    box-shadow: 0px 5px #5a7ca7;
-    transition: 0.5s;
-}
-.container .add-btn:hover {
-    cursor: pointer;
-    background-color: #7dade9;
-    color: var(--primary);
-}
-
-.container .delete-btn {
-    padding: 10px 30px;
-    background-color: rgb(235, 81, 81);
-    color: var(--primary);
-    border: none;
-    border-radius: 30px;
-    font-weight: 500;
-    transition: 0.15s;
-    box-shadow: 0px 5px #a14242;
-    transition: 0.5s;
-}
-.container .delete-btn:hover {
-    cursor: pointer;
-    background-color: rgb(205, 70, 70);
-    box-shadow: 0px 5px #853636;
-}
-.container .dokument-btn {
-    padding: 10px 30px;
-    background-color: rgb(57, 88, 223);
-    color: var(--primary);
-    border: none;
-    border-radius: 30px;
-    font-weight: 500;
-    transition: 0.15s;
-    box-shadow: 0px 5px rgb(51, 69, 148);
-    transition: 0.5s;
-}
-.container .dokument-btn:hover {
-    cursor: pointer;
-    background-color: rgb(52, 80, 206);
-    box-shadow: 0px 5px rgb(43, 58, 124);
-}
 #search {
     padding: 10px 20px;
     border: 3px solid var(--secondary);
@@ -219,6 +146,36 @@ header label {
     display: flex;
     margin: 0 20px 0 auto;
     background-color: var(--primary);
+}
+
+.container {
+    margin-top: 10px;
+    width: 100%;
+    max-height: 810px;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+.container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.container thead th {
+    position: sticky;
+    top: 0px;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--secondary);
+    color: var(--primary);
+    z-index: 1;
+}
+.container tbody td{
+    background-color: var(--primary);
+    border-bottom: 1px solid var(--secondary);
+    text-align: left;
+    padding: 10px;
+}
+.container .datum {
+    text-align: center;
 }
 
 @media(max-width:1263px) {
@@ -255,13 +212,16 @@ header label {
     }
 }
 @media(max-width: 550px) {
+    #title1 {
+        justify-content: center;
+        padding-left: 0;
+    }
     header .logo img {
         height: 60px;
         width: 60px;
     }
     #search {
-        padding: 10px 15px;
-        font-size: 15px;
+        padding: 10px 10px;
     }
 }
 

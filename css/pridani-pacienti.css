@@ -113,14 +113,7 @@ header label {
 .current_page {
     text-decoration: underline;
     text-decoration-thickness: 2px;
-    text-decoration-color: var(--secondary);
-}
-#employee-table {
-    width: 100%;
-    margin: 0 auto;
-    border-collapse: collapse;
-    border-spacing: 0;
-    margin-top: 20px;
+    color: var(--secondary);
 }
 .navbar .proklik{
     background-color: transparent;
@@ -146,82 +139,126 @@ header label {
     cursor: pointer;
 }
 .container {
-    overflow-x: auto;
-    overflow-y: auto;
-}
-.container .table-head th{
-    text-align: center;
+    min-height: 80vh;
     padding: 20px;
+}
+.area1 {
+    grid-area: area1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    align-items: start;
+    padding-bottom: 20px;
+}
+.area1 input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid var(--secondary);
+    border-radius: 50px;
+    transition: 0.15s;
+}
+.area2, .area3, .area4{
+    grid-area: area2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: start;
+    padding-bottom: 20px;
+}
+.area2 div, .area3 div, .area4 div{
+    background-color: var(--primary);
+    width: 90%;
+    padding: 5% 10%;
+    border-radius: 15px;
+    border: 2px solid var(--secondary);
+}
+.area2 input, .area3 input, .area4 input{
+    border: none;
+    border-bottom: 1px dotted black;
+    margin-bottom: 5px;
+}
+.area1 input:focus, .area2 input:focus, .area3 input:focus, .area4 input:focus{
+    outline: none;
+}
+.area2 h2, .area3 h2, .area4 h2, .area5 h2{
+    color: var(--secondary);
+}
+.area3 {
+    grid-area: area3;
+}
+.area4 {
+    grid-area: area4;
+}
+.area5 {
+    grid-area: area5;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding-bottom: 20px;
+}
+.area5 div {
+    background-color: var(--primary);
+    height: 100%;
+    width: 92%;
+    padding: 2%;
+    border-radius: 15px;
+    border: 2px solid var(--secondary);
+}
+.area5 h2 {
+    color: var(--secondary);
+    padding-bottom: 5px;
+}
+.area5 textarea {
+    border: none;
+    width: 100%;
+    height: 95%;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 18px;
+    resize: none;
+    background-image: repeating-linear-gradient(to bottom, transparent, transparent calc(1.5em - 1px), rgb(104, 104, 104) 1.5em);
+    background-attachment: local;
+    line-height: 1.5em;
+    padding: 1.5em 0;
+}
+.area5 textarea:focus {
+    outline: none;
+}
+.ordinace {
+    height: 92.5% !important;
+}
+h1 {
+    margin-bottom: 20px;
+    color: var(--secondary);
+}
+h2 {
+    font-size: 20px;
+}
+.area6{
+    display: flex;
+    justify-content: center;
+}
+#add-btn {
+    width: 200px;
+    padding: 20px 30px 20px 30px;
+    margin: 10px 0;
+    border: 2px solid #5a7ca7;
+    border-radius: 50px;
+    transition: 0.15s;
     background-color: var(--secondary);
     color: var(--primary);
-}
-.container .table-body td{
-    background-color: var(--primary);
-    border-bottom: 1px solid var(--secondary);
-    text-align: center;
-    padding: 10px;
-}
-.container .add-btn {
-    padding: 10px 30px;
-    background-color: var(--primary);
-    color: var(--secondary);
-    border: none;
-    border-radius: 25px;
-    font-weight: 500;
-    transition: 0.15s;
     box-shadow: 0px 5px #5a7ca7;
-    transition: 0.5s;
 }
-.container .add-btn:hover {
+#add-btn:hover {
     cursor: pointer;
-    background-color: #7dade9;
-    color: var(--primary);
+    background-color: #6c94c9;
 }
 
-.container .delete-btn {
-    padding: 10px 30px;
-    background-color: rgb(235, 81, 81);
-    color: var(--primary);
-    border: none;
-    border-radius: 30px;
-    font-weight: 500;
-    transition: 0.15s;
-    box-shadow: 0px 5px #a14242;
-    transition: 0.5s;
-}
-.container .delete-btn:hover {
-    cursor: pointer;
-    background-color: rgb(205, 70, 70);
-    box-shadow: 0px 5px #853636;
-}
-.container .dokument-btn {
-    padding: 10px 30px;
-    background-color: rgb(57, 88, 223);
-    color: var(--primary);
-    border: none;
-    border-radius: 30px;
-    font-weight: 500;
-    transition: 0.15s;
-    box-shadow: 0px 5px rgb(51, 69, 148);
-    transition: 0.5s;
-}
-.container .dokument-btn:hover {
-    cursor: pointer;
-    background-color: rgb(52, 80, 206);
-    box-shadow: 0px 5px rgb(43, 58, 124);
-}
-#search {
-    padding: 10px 20px;
-    border: 3px solid var(--secondary);
-    border-radius: 25px;
-    font-size: 20px;
-    transition: 0.15s;
-    display: flex;
-    margin: 0 20px 0 auto;
-    background-color: var(--primary);
-}
-
-@media(max-width:1263px) {
+@media(max-width:1275px) {
     header {
         padding: 25px;
     }
@@ -253,15 +290,55 @@ header label {
         text-align:initial;
         padding: 35px;
     }
+    .area1 {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    .area2, .area3, .area4{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .area2 div, .area3 div, .area4 div{
+        margin: 3%;
+    }
+}
+@media(max-width: 800px) {
+    .area1 {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+    h2{
+        font-size: 16px;
+    }
+    .area5 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-gap: 20px;
+    }
+    .area5 div {
+        margin: 3%;
+    }
+    .area5 h2 {
+        text-align: center;
+    }
+}
+@media(max-width: 650px) {
+    .area1 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+    .area2, .area3, .area4{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+    h1{
+        text-align: center;
+    }
 }
 @media(max-width: 550px) {
     header .logo img {
         height: 60px;
         width: 60px;
-    }
-    #search {
-        padding: 10px 15px;
-        font-size: 15px;
     }
 }
 
