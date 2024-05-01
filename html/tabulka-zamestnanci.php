@@ -88,7 +88,7 @@
                             } else {
                                 echo "<td>" . $row['nazev_specializace'] . "</td>";
                             }
-                            echo '<td><form action="../php/smazat_zamestnance.php" method="post"><button value=' . $row["id"] . ' class="delete-btn" name="delete-btn" type="submit">Smazat</button></form></td>';
+                            echo '<td><form action="../php/smazat_zamestnance.php" method="post" onsubmit="return confirm(\'Jste si jisti že chcete smazat zaměstnance ' . $row['jmeno'] . ' ' . $row['prijmeni'] . '?\');"><button value=' . $row["id"] . ' class="delete-btn" name="delete-btn" type="submit">Smazat</button></form></td>';
                             echo "</tr>";
                         }
                     ?>

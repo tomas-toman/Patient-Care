@@ -88,6 +88,7 @@
                         echo "<td>" . $row['cislo_luzka'] . "</td>";
                         echo "<td>";
                         echo '<form action="../php/presmerovani_dokumentace.php" method="post" style="display: inline-block; margin: 0; padding: 10px;"><button value=' . $row["fk_pacient"] . ' class="dokument-btn" name="button" type="submit">Dokumentace</button></form>';
+                        echo '<form action="../php/presmerovani_uprava.php" method="post" style="display: inline-block; margin: 0; padding: 10px;"><button value=' . $row["fk_pacient"] . ' class="uprava-btn" name="button" type="submit">Upravit dokumentaci</button></form>';
                         echo '<form action="../php/smazat_pacienta.php" method="post" style="display: inline-block; margin: 0; padding: 10px;"><button value=' . $row["fk_pacient"] . ' class="delete-btn" name="delete-btn" type="submit">Smazat</button></form>';
                         echo "</td>";
                         echo "</tr>";
@@ -103,7 +104,8 @@
                         echo "<td>-</td>";
                         echo "<td>";
                         echo '<form action="../php/presmerovani_dokumentace.php" method="post" style="display: inline-block; margin: 0; padding: 10px;"><button value=' . $row["fk_pacient"] . ' class="dokument-btn" name="button" type="submit">Dokumentace</button></form>';
-                        echo '<form action="../php/smazat_pacienta.php" method="post" style="display: inline-block; margin: 0; padding: 10px;"><button value=' . $row["fk_pacient"] . ' class="delete-btn" name="delete-btn" type="submit">Smazat</button></form>';
+                        echo '<form action="../php/presmerovani_uprava.php" method="post" style="display: inline-block; margin: 0; padding: 10px;"><button value=' . $row["fk_pacient"] . ' class="uprava-btn" name="button" type="submit">Upravit dokumentaci</button></form>';
+                        echo '<form action="../php/smazat_pacienta.php" method="post" style="display: inline-block; margin: 0; padding: 10px;" onsubmit="return confirm(\'Jste si jisti že chcete smazat pacienta ' . $row['jmeno'] . ' ' . $row['prijmeni'] . '?\');"><button value=' . $row["fk_pacient"] . ' class="delete-btn" name="delete-btn" type="submit">Smazat</button></form>';
                         echo "</td>";
                         echo "</tr>";
                     }

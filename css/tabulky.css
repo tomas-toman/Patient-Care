@@ -177,7 +177,22 @@ header label {
     background-color: #7dade9;
     color: var(--primary);
 }
-
+.container .uprava-btn {
+    padding: 10px 30px;
+    background-color: rgb(78, 193, 78);
+    color: var(--primary);
+    border: none;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: 0.15s;
+    box-shadow: 0px 5px rgb(61, 150, 61);
+    transition: 0.5s;
+}
+.container .uprava-btn:hover {
+    cursor: pointer;
+    background-color: rgb(67, 162, 67);
+    color: var(--primary);
+}
 .container .delete-btn {
     padding: 10px 30px;
     background-color: rgb(235, 81, 81);

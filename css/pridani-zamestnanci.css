@@ -167,6 +167,27 @@ input {
 input:focus {
     outline: none;
 }
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('../img/caret-down-solid.svg');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid var(--secondary);
+    border-radius: 50px;
+    transition: 0.15s;
+    background-color: var(--primary);
+}
+select:hover{
+    cursor: pointer;
+}
+select:focus {
+    outline: none;
+}
 #add-btn {
     width: 40%;
     padding: 10px 20px 10px 20px;
@@ -227,12 +248,12 @@ input:focus {
     width: 15px;
   }
   
-  ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 4px rgb(165, 165, 165);
-    border-radius: 7.5px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: var(--secondary);
-    border-radius: 7.5px;
-  }
+::-webkit-scrollbar-track {
+box-shadow: inset 0 0 4px rgb(165, 165, 165);
+border-radius: 7.5px;
+}
+
+::-webkit-scrollbar-thumb {
+background: var(--secondary);
+border-radius: 7.5px;
+}

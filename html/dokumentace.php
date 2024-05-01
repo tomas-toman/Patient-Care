@@ -178,6 +178,7 @@
                             foreach($_SESSION['data_pacient'] as $pacient) {
                                 if(isset($pacient['info_json'])) {
                                     $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    $info_json['vedomi'] = str_replace(';', ',', $info_json['vedomi']);
                                     echo $info_json['vedomi'];
                                 }
                                 else {
@@ -194,6 +195,7 @@
                             foreach($_SESSION['data_pacient'] as $pacient) {
                                 if(isset($pacient['info_json'])) {
                                     $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    $info_json['mobilita,sobestacnost'] = str_replace(';', ',', $info_json['mobilita,sobestacnost']);
                                     echo $info_json['mobilita,sobestacnost'];
                                 }
                                 else {
@@ -210,6 +212,7 @@
                             foreach($_SESSION['data_pacient'] as $pacient) {
                                 if(isset($pacient['info_json'])) {
                                     $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    $info_json['komunikace'] = str_replace(';', ',', $info_json['komunikace']);
                                     echo $info_json['komunikace'];
                                 }
                                 else {
@@ -226,6 +229,7 @@
                             foreach($_SESSION['data_pacient'] as $pacient) {
                                 if(isset($pacient['info_json'])) {
                                     $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    $info_json['kompenzacni_pomucky'] = str_replace(';', ',', $info_json['kompenzacni_pomucky']);
                                     echo $info_json['kompenzacni_pomucky'];
                                 }
                                 else {
@@ -242,6 +246,7 @@
                             foreach($_SESSION['data_pacient'] as $pacient) {
                                 if(isset($pacient['info_json'])) {
                                     $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    $info_json['dychani'] = str_replace(';', ',', $info_json['dychani']);
                                     echo $info_json['dychani'];
                                 }
                                 else {
@@ -258,6 +263,7 @@
                             foreach($_SESSION['data_pacient'] as $pacient) {
                                 if(isset($pacient['info_json'])) {
                                     $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    $info_json['vyziva,tekutiny'] = str_replace(';', ',', $info_json['vyziva,tekutiny']);
                                     echo $info_json['vyziva,tekutiny'];
                                 }
                                 else {
@@ -274,6 +280,7 @@
                             foreach($_SESSION['data_pacient'] as $pacient) {
                                 if(isset($pacient['info_json'])) {
                                     $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    $info_json['vylucovani_moci'] = str_replace(';', ',', $info_json['vylucovani_moci']);
                                     echo $info_json['vylucovani_moci'];
                                 }
                                 else {
@@ -290,6 +297,7 @@
                             foreach($_SESSION['data_pacient'] as $pacient) {
                                 if(isset($pacient['info_json'])) {
                                     $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    $info_json['vylucovani_stolice'] = str_replace(';', ',', $info_json['vylucovani_stolice']);
                                     echo $info_json['vylucovani_stolice'];
                                 }
                                 else {
@@ -306,6 +314,7 @@
                             foreach($_SESSION['data_pacient'] as $pacient) {
                                 if(isset($pacient['info_json'])) {
                                     $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    $info_json['vstupy'] = str_replace(';', ',', $info_json['vstupy']);
                                     echo $info_json['vstupy'];
                                 }
                                 else {
@@ -322,6 +331,7 @@
                             foreach($_SESSION['data_pacient'] as $pacient) {
                                 if(isset($pacient['info_json'])) {
                                     $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    $info_json['kuze'] = str_replace(';', ',', $info_json['kuze']);
                                     echo $info_json['kuze'];
                                 }
                                 else {
@@ -338,6 +348,7 @@
                             foreach($_SESSION['data_pacient'] as $pacient) {
                                 if(isset($pacient['info_json'])) {
                                     $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    $info_json['bolest'] = str_replace(';', ',', $info_json['bolest']);
                                     echo $info_json['bolest'];
                                 }
                                 else {
@@ -354,6 +365,7 @@
                             foreach($_SESSION['data_pacient'] as $pacient) {
                                 if(isset($pacient['info_json'])) {
                                     $info_json = is_array($pacient['info_json']) ? $pacient['info_json'] : json_decode($pacient['info_json'], true);
+                                    $info_json['chovani,spanek'] = str_replace(';', ',', $info_json['chovani,spanek']);
                                     echo $info_json['chovani,spanek'];
                                 }
                                 else {

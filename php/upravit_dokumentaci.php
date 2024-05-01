@@ -50,13 +50,13 @@
         "ordinace,osetrovatelska_pece" => $ordinace
     ));
     
-    $result = pg_prepare($conn, "pacient_query", 'INSERT INTO pacienti (rodne_cislo, jmeno, prijmeni, datum_narozeni, den_hospitalizace, rezim_operacni_den, info_json) VALUES ($1, $2, $3, $4, $5, $6, $7)');
+    $result = pg_prepare($conn, "pacient_query", 'UPDATE pacienti SET jmeno = $2, prijmeni = $3, datum_narozeni = $4, den_hospitalizace = $5, rezim_operacni_den = $6, info_json = $7 WHERE rodne_cislo = $1');
     $result = pg_execute($conn, "pacient_query", array($rodne_cislo, $jmeno, $prijmeni, $datum_narozeni, $den_hospitalizace, $rezim_operacni_den, $info_json));
-
-    $logData = $_SESSION['user_jmeno'] . " " . $_SESSION['user_prijmeni'] . " přidal/a pacienta " . $jmeno . " " . $prijmeni . " do databáze.";
-
+    
+    $logData = $_SESSION['user_jmeno'] . " " . $_SESSION['user_prijmeni'] . " upravil/a dokumentaci pacienta " . $jmeno . " " . $prijmeni . ".";
+    
     $result = pg_prepare($conn, "log", "INSERT INTO log (data, datum) VALUES ($1, DATE_TRUNC('second', NOW()))");
     $result = pg_execute($conn, "log", array($logData));
-
+    
     header('Location: ./vypis_pacientu.php');
 ?>

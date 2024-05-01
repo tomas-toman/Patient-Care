@@ -18,16 +18,36 @@
     <title>Patient care | Přidání pacienta</title>
     <script>
         jQuery(function(){
-            var checkboxes = jQuery('input[type="checkbox"]');
+            var checkboxGroups = {};
 
-            checkboxes.click(function(){
+            jQuery('input[type="checkbox"]').each(function(){
+                var $this = $(this);
+                var name = this.name;
+
+                if (!checkboxGroups[name]) {
+                    checkboxGroups[name] = [];
+                }
+
+                if (this.checked) {
+                    checkboxGroups[name].push($this);
+                }
+            });
+
+            jQuery('input[type="checkbox"]').click(function(){
                 var $this = $(this);
                 var max = $this.data('max');
-                var set = checkboxes.filter('[name="'+ this.name +'"]');
-                var current = set.filter(':checked').length;
+                var name = this.name;
 
-                if (current > max) {
-                    $this.prop('checked', false);
+                if (this.checked) {
+                    checkboxGroups[name].push($this);
+                    if (checkboxGroups[name].length > max) {
+                        checkboxGroups[name].shift().prop('checked', false);
+                    }
+                } else {
+                    var index = checkboxGroups[name].indexOf($this);
+                    if (index > -1) {
+                        checkboxGroups[name].splice(index, 1);
+                    }
                 }
             });
 
@@ -233,7 +253,7 @@
                 <input type="text" placeholder="Jméno*" required name="jmeno"></input>
                 <input type="text" placeholder="Příjmení*" required name="prijmeni"></input>
                 <input type="text" placeholder="Datum narození* (RRRR-MM-DD)" required name="datum-narozeni"></input>
-                <input type="text" placeholder="Den hospitalizace*" required name="den-hospitalizace"></input>
+                <input type="text" placeholder="Den hospitalizace* (RRRR-MM-DD)" required name="den-hospitalizace"></input>
                 <input type="text" placeholder="Režim/Operační den*" required name="rezim-operacni-den"></input>
                 <input type="text" placeholder="Diagnóza*" required name="diagnoza"></input>
                 <input type="text" placeholder="Alergie*" required name="alergie"></input>

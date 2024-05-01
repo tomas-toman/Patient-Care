@@ -60,41 +60,41 @@
                 <input type="text" placeholder="Přihlašovací jméno*" name="prih_jmeno" required>
                 <input type="password" placeholder="Heslo*" name="heslo" required>
 
-                <input list="pozice" placeholder="Pozice*" name="pozice" required>
-                <datalist id="pozice">
-                    <option value="Lékař"></option>
-                    <option value="Zdravotní sestra"></option>
-                    <option value="Zdravotnický technik"></option>
-                    <option value="Administrativní personál"></option>
-                    <option value="Podpůrný personál"></option>
-                    <option value="Farmaceutický pracovník"></option>
-                    <option value="Terapeut"></option>
-                    <option value="Sociální pracovník"></option>
-                    <option value="IT personál"></option>
-                </datalist>
+                <select id="pozice" name="pozice" required>
+                    <option value="Pozice">Pozice*</option>
+                    <option value="Lékař">Lékař</option>
+                    <option value="Zdravotní sestra">Zdravotní sestra</option>
+                    <option value="Zdravotnický technik">Zdravotnický technik</option>
+                    <option value="Administrativní personál">Administrativní personál</option>
+                    <option value="Podpůrný personál">Podpůrný personál</option>
+                    <option value="Farmaceutický pracovník">Farmaceutický pracovník</option>
+                    <option value="Terapeut">Terapeut</option>
+                    <option value="Sociální pracovník">Sociální pracovník</option>
+                    <option value="IT personál">IT personál</option>
+                </select>
 
-                <input list="specializace" placeholder="Specializace*" name="specializace" required>
-                <datalist id="specializace">
-                    <option value="Chirurgie"></option>
-                    <option value="Vnitřní lékařství"></option>
-                    <option value="Gynekologie a porodnictví"></option>
-                    <option value="Pediatrie"></option>
-                    <option value="Anesteziologie"></option>
-                    <option value="Radiologie"></option>
-                    <option value="Oční medicína"></option>
-                    <option value="Otorinolaryngologie"></option>
-                    <option value="Psychiatrie"></option>
-                    <option value="Dermatologie"></option>
-                    <option value="Infekční nemoci"></option>
-                    <option value="Endokrinologie"></option>
-                    <option value="Ortopedie"></option>
-                    <option value="Onkologie"></option>
-                    <option value="Fyzioterapie a rehabilitace"></option>
-                    <option value="Laboratorní medicína"></option>
-                    <option value="Zubní medicína"></option>
-                    <option value="Kardiologie"></option>
-                    <option value="IT"></option>
-                </datalist>
+                <select id="specializace" name="specializace" required>
+                    <option value="Specializace">Specializace*</option>
+                    <option value="Chirurgie">Chirurgie</option>
+                    <option value="Vnitřní lékařství">Vnitřní lékařství</option>
+                    <option value="Gynekologie a porodnictví">Gynekologie a porodnictví</option>
+                    <option value="Pediatrie">Pediatrie</option>
+                    <option value="Anesteziologie">Anesteziologie</option>
+                    <option value="Radiologie">Radiologie</option>
+                    <option value="Oční medicína">Oční medicína</option>
+                    <option value="Otorinolaryngologie">Otorinolaryngologie</option>
+                    <option value="Psychiatrie">Psychiatrie</option>
+                    <option value="Dermatologie">Dermatologie</option>
+                    <option value="Infekční nemoci">Infekční nemoci</option>
+                    <option value="Endokrinologie">Endokrinologie</option>
+                    <option value="Ortopedie">Ortopedie</option>
+                    <option value="Onkologie">Onkologie</option>
+                    <option value="Fyzioterapie a rehabilitace">Fyzioterapie a rehabilitace</option>
+                    <option value="Laboratorní medicína">Laboratorní medicína</option>
+                    <option value="Zubní medicína">Zubní medicína</option>
+                    <option value="Kardiologie">Kardiologie</option>
+                    <option value="IT">IT</option>
+                </select>
 
                 <button id="add-btn" type="submit">Přidat</button>
             </form>
