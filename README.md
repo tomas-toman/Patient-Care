@@ -21,8 +21,8 @@ Aplikace disponuje funkcemi jako je horní navigační panel, pomocí kterého s
 - [x]  Implementovat zobrazovací tabulku s informacemi o pacientech a jejich léčbě.
 - [x]  Přidat možnost přidávat a odebírat pacienty z lůžka v nemocnici.
 - [x]  Vytvořit stránku s detailními informacemi o pacientovi a jeho léčebném plánu.
-- [ ]  Zobrazit všechny zaměstnance a pacienty nemocnice a umožnit jejich přidání/odebrání.
-- [ ]  Vytvořit log akcí pro sledování změn v databázi.
+- [x]  Zobrazit všechny zaměstnance a pacienty nemocnice a umožnit jejich přidání/odebrání.
+- [x]  Vytvořit log akcí pro sledování změn v databázi.
 - [x]  Navrhnout a implementovat zobrazování všech pacientů a jejich přiřazených pokojů v nemocnici.
 - [ ]  Provést základní optimalizace a zajistit bezpečnost dat v databázi.
 - [ ]  Vytvořit uživatelské profily zaměstnanců a správu jejich přístupových práv.
