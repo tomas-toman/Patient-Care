@@ -15,6 +15,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/font-awesome.min.css" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/db4d39efc5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/log.css">
+    <link rel="icon" href="../img/Logo.png" type="image/x-icon"/>
     <title>Patient care | Log akcí</title>
     <script>
         $(document).ready(function() {
@@ -38,7 +39,7 @@
 
         <nav class="navbar">
             <ul>
-                <li><a href="#" class="current_page">Navigační menu</a></li>
+                <li><a href="./menu.php">Navigační menu</a></li>
                 <li><a href="#">Zaměstnanci <i class="fa-solid fa-caret-down fa-rotate-90"></i></a>
                     <ul>
                         <form action="../php/vypis_zamestnancu.php"><button type="submit" class="proklik"><li>Výpis zaměstnanců</li></button></form>
@@ -51,7 +52,7 @@
                         <li><a href="./pridani-pacienti.php">Přidání pacienta</a></li>
                     </ul>
                 </li>
-                <li><a href="../php/log-vypis.php">Log akcí</a></li>
+                <li><a href="../php/log-vypis.php" class="current_page">Log akcí</a></li>
                 <li>
                     <div class="logged">
                         <p>Jste přihlášen/a jako <?=$_SESSION['user_jmeno'] . " " . $_SESSION['user_prijmeni']?></p>

@@ -272,6 +272,18 @@ h2 {
     cursor: pointer;
     background-color: rgb(67, 162, 67);
 }
+.input-label {
+    display: block;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 10px;
+    color: var(--secondary);
+}
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
 
 @media(max-width:1275px) {
     header {
@@ -348,6 +360,10 @@ h2 {
     }
     h1{
         text-align: center;
+    }
+    .input-label {
+        text-align: center;
+        padding-left: 0;
     }
 }
 @media(max-width: 550px) {

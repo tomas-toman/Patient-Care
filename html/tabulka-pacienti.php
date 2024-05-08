@@ -15,7 +15,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/font-awesome.min.css" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/db4d39efc5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/tabulky.css">
-    <title>Patient care | Tabulka pacientů</title>
+    <link rel="icon" href="../img/Logo.png" type="image/x-icon"/>
+    <title>Patient care | Výpis pacientů</title>
     <script>
         $(document).ready(function() {
         $("#search").on("keyup", function() {

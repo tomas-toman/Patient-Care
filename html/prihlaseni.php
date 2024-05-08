@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/prihlaseni.css">
+    <link rel="icon" href="../img/Logo.png" type="image/x-icon"/>
     <title>Patient care | Přihlášení</title>
 </head>
 <body>

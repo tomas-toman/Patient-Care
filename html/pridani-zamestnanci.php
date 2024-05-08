@@ -15,6 +15,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/font-awesome.min.css" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/db4d39efc5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/pridani-zamestnanci.css">
+    <link rel="icon" href="../img/Logo.png" type="image/x-icon"/>
     <title>Patient care | Přidání zaměstnance</title>
 </head>
 <body>

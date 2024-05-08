@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/db4d39efc5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/pokoj.css">
+    <link rel="icon" href="../img/Logo.png" type="image/x-icon"/>
     <title>Patient care | Pokoj č. <?php echo $_SESSION['cislo_pokoje']; ?></title>
 </head>
 <body>

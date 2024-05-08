@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     include './conn.php';
 
     $rodne_cislo = $_POST['rodne-cislo'];

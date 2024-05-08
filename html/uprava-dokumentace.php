@@ -40,6 +40,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/font-awesome.min.css" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/db4d39efc5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/pridani-pacienti.css">
+    <link rel="icon" href="../img/Logo.png" type="image/x-icon"/>
     <title>Patient care | Přidání pacienta</title>
     <script>
         jQuery(function(){
@@ -87,153 +88,56 @@
                     }
                 }
             });
+            
+            var handleInputChange = function(inputId, checkboxId, prefix) {
+                jQuery('#' + checkboxId).change(function(){
+                    if (this.checked) {
+                        jQuery('#' + inputId).focus();
+                    } else {
+                        jQuery('#' + inputId).val('');
+                    }
+                });
 
-            jQuery('#pomuckyJine').change(function(){
-            if (this.checked) {
-                jQuery('#pomuckyInput').focus();
-            } else {
-                jQuery('#pomuckyInput').val('');
-            }});
+                jQuery('#' + inputId).on('input', function(){
+                    var $this = jQuery(this);
+                    var text = $this.val();
+                    jQuery('#' + checkboxId).val(prefix + text);
+                });
+            };
 
-            jQuery('#pomuckyInput').on('input', function(){
-                var $this = jQuery(this);
-                var text = $this.val();
-                jQuery('#pomuckyJine').val('Jiné: ' + text);
+            var inputConfigs = [
+                { inputId: 'pomuckyInput', checkboxId: 'pomuckyJine', prefix: 'Jiné: ' },
+                { inputId: 'vyzivaInput1', checkboxId: 'vyzivaJine1', prefix: 'Dieta č.: ' },
+                { inputId: 'vyzivaInput2', checkboxId: 'vyzivaJine2', prefix: 'Tekutiny: ' },
+                { inputId: 'vyzivaInput3', checkboxId: 'vyzivaJine3', prefix: 'Jiné: ' },
+                { inputId: 'stoliceInput', checkboxId: 'stoliceJine', prefix: 'Příměs: ' },
+                { inputId: 'vstupyInput1', checkboxId: 'vstupyJine1', prefix: 'PŽK: ' },
+                { inputId: 'vstupyInput2', checkboxId: 'vstupyJine2', prefix: 'CŽK: ' },
+                { inputId: 'vstupyInput3', checkboxId: 'vstupyJine3', prefix: 'Drény: ' },
+                { inputId: 'vstupyInput4', checkboxId: 'vstupyJine4', prefix: 'Jiné: ' },
+                { inputId: 'kuzeInput', checkboxId: 'kuzeJine', prefix: 'Lokalizace: ' },
+            ];
+
+            inputConfigs.forEach(function(config) {
+                handleInputChange(config.inputId, config.checkboxId, config.prefix);
             });
 
-            jQuery('#vyzivaJine1').change(function(){
-            if (this.checked) {
-                jQuery('#vyzivaInput1').focus();
-            } else {
-                jQuery('#vyzivaInput1').val('');
-            }});
+                jQuery('#bolestJine').change(function(){
+                if (this.checked) {
+                    jQuery('#bolestInput1').focus();
+                } else {
+                    jQuery('#bolestInput1').val('');
+                    jQuery('#bolestInput2').val('');
+                    jQuery('#bolestInput3').val('');
+                }});
 
-            jQuery('#vyzivaInput1').on('input', function(){
-                var $this = jQuery(this);
-                var text = $this.val();
-                jQuery('#vyzivaJine1').val('Dieta č.: ' + text);
+                jQuery('#bolestInput1, #bolestInput2, #bolestInput3').on('input', function(){
+                    var text1 = jQuery('#bolestInput1').val();
+                    var text2 = jQuery('#bolestInput2').val();
+                    var text3 = jQuery('#bolestInput3').val();
+                    jQuery('#bolestJine').val('Charakter: ' + text1 + '; Lokalizace: ' + text2 + '; Stupeň: ' + text3);
+                });
             });
-
-            jQuery('#vyzivaJine2').change(function(){
-            if (this.checked) {
-                jQuery('#vyzivaInput2').focus();
-            } else {
-                jQuery('#vyzivaInput2').val('');
-            }});
-
-            jQuery('#vyzivaInput2').on('input', function(){
-                var $this = jQuery(this);
-                var text = $this.val();
-                jQuery('#vyzivaJine2').val('Tekutiny: ' + text);
-            });
-
-            jQuery('#vyzivaJine3').change(function(){
-            if (this.checked) {
-                jQuery('#vyzivaInput3').focus();
-            } else {
-                jQuery('#vyzivaInput3').val('');
-            }});
-
-            jQuery('#vyzivaInput3').on('input', function(){
-                var $this = jQuery(this);
-                var text = $this.val();
-                jQuery('#vyzivaJine3').val('Jiné: ' + text);
-            });
-
-            jQuery('#stoliceJine').change(function(){
-            if (this.checked) {
-                jQuery('#stoliceInput').focus();
-            } else {
-                jQuery('#stoliceInput').val('');
-            }});
-
-            jQuery('#stoliceInput').on('input', function(){
-                var $this = jQuery(this);
-                var text = $this.val();
-                jQuery('#stoliceJine').val('Příměs: ' + text);
-            });
-
-            jQuery('#vstupyJine1').change(function(){
-            if (this.checked) {
-                jQuery('#vstupyInput1').focus();
-            } else {
-                jQuery('#vstupyInput1').val('');
-            }});
-
-            jQuery('#vstupyInput1').on('input', function(){
-                var $this = jQuery(this);
-                var text = $this.val();
-                jQuery('#vstupyJine1').val('PŽK: ' + text);
-            });
-
-            jQuery('#vstupyJine2').change(function(){
-            if (this.checked) {
-                jQuery('#vstupyInput2').focus();
-            } else {
-                jQuery('#vstupyInput2').val('');
-            }});
-
-            jQuery('#vstupyInput2').on('input', function(){
-                var $this = jQuery(this);
-                var text = $this.val();
-                jQuery('#vstupyJine2').val('CŽK: ' + text);
-            });
-
-            jQuery('#vstupyJine3').change(function(){
-            if (this.checked) {
-                jQuery('#vstupyInput3').focus();
-            } else {
-                jQuery('#vstupyInput3').val('');
-            }});
-
-            jQuery('#vstupyInput3').on('input', function(){
-                var $this = jQuery(this);
-                var text = $this.val();
-                jQuery('#vstupyJine3').val('Drény: ' + text);
-            });
-
-            jQuery('#vstupyJine4').change(function(){
-            if (this.checked) {
-                jQuery('#vstupyInput4').focus();
-            } else {
-                jQuery('#vstupyInput4').val('');
-            }});
-
-            jQuery('#vstupyInput4').on('input', function(){
-                var $this = jQuery(this);
-                var text = $this.val();
-                jQuery('#vstupyJine4').val('Jiné: ' + text);
-            });
-
-            jQuery('#kuzeJine').change(function(){
-            if (this.checked) {
-                jQuery('#kuzeInput').focus();
-            } else {
-                jQuery('#kuzeInput').val('');
-            }});
-
-            jQuery('#kuzeInput').on('input', function(){
-                var $this = jQuery(this);
-                var text = $this.val();
-                jQuery('#kuzeJine').val('Lokalizace: ' + text);
-            });
-
-            jQuery('#bolestJine').change(function(){
-            if (this.checked) {
-                jQuery('#bolestInput1').focus();
-            } else {
-                jQuery('#bolestInput1').val('');
-                jQuery('#bolestInput2').val('');
-                jQuery('#bolestInput3').val('');
-            }});
-
-            jQuery('#bolestInput1, #bolestInput2, #bolestInput3').on('input', function(){
-                var text1 = jQuery('#bolestInput1').val();
-                var text2 = jQuery('#bolestInput2').val();
-                var text3 = jQuery('#bolestInput3').val();
-                jQuery('#bolestJine').val('Charakter: ' + text1 + '; Lokalizace: ' + text2 + '; Stupeň: ' + text3);
-            });
-        });
     </script>
 </head>
 <body>
@@ -274,16 +178,55 @@
         <h1>Úprava dokumentace</h1>
         <form action="../php/upravit_dokumentaci.php" method="post">
             <div class="area1">
-                <input type="text" placeholder="Rodné číslo*" required name="rodne-cislo" value="<?php echo $data_pacient['rodne_cislo']; ?>"></input>
-                <input type="text" placeholder="Jméno*" required name="jmeno" value="<?php echo $data_pacient['jmeno']; ?>"></input>
-                <input type="text" placeholder="Příjmení*" required name="prijmeni" value="<?php echo $data_pacient['prijmeni']; ?>"></input>
-                <input type="text" placeholder="Datum narození* (RRRR-MM-DD)" required name="datum-narozeni" value="<?php echo $data_pacient['datum_narozeni']; ?>"></input>
-                <input type="text" placeholder="Den hospitalizace* (RRRR-MM-DD)" required name="den-hospitalizace" value="<?php echo $data_pacient['den_hospitalizace']; ?>"></input>
-                <input type="text" placeholder="Režim/Operační den*" required name="rezim-operacni-den" value="<?php echo $data_pacient['rezim_operacni_den']; ?>"></input>
-                <input type="text" placeholder="Diagnóza*" required name="diagnoza" value="<?php echo isset($info_json['diagnoza']) ? $info_json['diagnoza'] : ''; ?>"></input>
-                <input type="text" placeholder="Alergie*" required name="alergie" value="<?php echo isset($info_json['alergie']) ? $info_json['alergie'] : ''; ?>"></input>
-                <input type="text" placeholder="Výška* (cm)" required name="vyska" value="<?php echo isset($info_json['vyska']) ? $info_json['vyska'] : ''; ?>"></input>
-                <input type="text" placeholder="Váha* (kg)" required name="vaha" value="<?php echo isset($info_json['vaha']) ? $info_json['vaha'] : ''; ?>"></input>
+                <div class="input-group">
+                    <label for="rodne-cislo" class="input-label">Rodné číslo*</label>
+                    <input type="text" id="rodne-cislo" placeholder="Rodné číslo*" required name="rodne-cislo" value="<?php echo $data_pacient['rodne_cislo']; ?>"></input>
+                </div>
+
+                <div class="input-group">
+                    <label for="jmeno" class="input-label">Jméno*</label>
+                    <input type="text" id="jmeno" placeholder="Jméno*" required name="jmeno" value="<?php echo $data_pacient['jmeno']; ?>"></input>
+                </div>
+
+                <div class="input-group">
+                    <label for="prijmeni" class="input-label">Příjmení*</label>
+                    <input type="text" id="prijmeni" placeholder="Příjmení*" required name="prijmeni" value="<?php echo $data_pacient['prijmeni']; ?>"></input>
+                </div>
+
+                <div class="input-group">
+                    <label for="datum-narozeni" class="input-label">Datum narození* (RRRR-MM-DD)</label>
+                    <input type="text" id="datum-narozeni" placeholder="Datum narození* (RRRR-MM-DD)" required name="datum-narozeni" value="<?php echo $data_pacient['datum_narozeni']; ?>"></input>
+                </div>
+
+                <div class="input-group">
+                    <label for="den-hospitalizace" class="input-label">Den hospitalizace* (RRRR-MM-DD)</label>
+                    <input type="text" id="den-hospitalizace" placeholder="Den hospitalizace* (RRRR-MM-DD)" required name="den-hospitalizace" value="<?php echo $data_pacient['den_hospitalizace']; ?>"></input>
+                </div>
+
+                <div class="input-group">
+                    <label for="rezim-operacni-den" class="input-label">Režim/Operační den*</label>
+                    <input type="text" id="rezim-operacni-den" placeholder="Režim/Operační den*" required name="rezim-operacni-den" value="<?php echo $data_pacient['rezim_operacni_den']; ?>"></input>
+                </div>
+                
+                <div class="input-group">
+                    <label for="diagnoza" class="input-label">Diagnóza*</label>
+                    <input type="text" id="diagnoza" placeholder="Diagnóza*" required name="diagnoza" value="<?php echo isset($info_json['diagnoza']) ? $info_json['diagnoza'] : ''; ?>"></input>
+                </div>
+                
+                <div class="input-group">
+                    <label for="alergie" class="input-label">Alergie*</label>
+                    <input type="text" id="alergie" placeholder="Alergie*" required name="alergie" value="<?php echo isset($info_json['alergie']) ? $info_json['alergie'] : ''; ?>"></input>
+                </div>
+
+                <div class="input-group">
+                    <label for="vyska" class="input-label">Výška* (cm)</label>
+                    <input type="text" id="vyska" placeholder="Výška* (cm)" required name="vyska" value="<?php echo isset($info_json['vyska']) ? $info_json['vyska'] : ''; ?>"></input>
+                </div>
+                
+                <div class="input-group">
+                    <label for="vaha" class="input-label">Váha* (kg)</label>
+                    <input type="text" id="vaha" placeholder="Váha* (kg)" required name="vaha" value="<?php echo isset($info_json['vaha']) ? $info_json['vaha'] : ''; ?>"></input>
+                </div>
             </div>
             <div class="area2">
                 <div>
