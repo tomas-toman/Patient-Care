@@ -24,10 +24,9 @@ Aplikace disponuje funkcemi jako je horní navigační panel, pomocí kterého s
 - [x]  Zobrazit všechny zaměstnance a pacienty nemocnice a umožnit jejich přidání/odebrání.
 - [x]  Vytvořit log akcí pro sledování změn v databázi.
 - [x]  Navrhnout a implementovat zobrazování všech pacientů a jejich přiřazených pokojů v nemocnici.
-- [ ]  Provést základní optimalizace a zajistit bezpečnost dat v databázi.
+- [x]  Provést základní optimalizace a zajistit bezpečnost dat v databázi.
 - [ ]  Vytvořit uživatelské profily zaměstnanců a správu jejich přístupových práv.
 - [x]  Implementovat vyhledávání pacientů a zaměstnanců v aplikaci.
 - [ ]  Dokončit vývoj aplikace s důrazem na uživatelské rozhraní a uživatelskou přívětivost.
 - [ ]  Provést závěrečné testování, debugování a odstranění všech nalezených chyb.
 - [ ]  Dokončit dokumentaci projektu, včetně uživatelského manuálu a technické dokumentace.
-
