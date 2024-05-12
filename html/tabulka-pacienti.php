@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if (isset($_SESSION['user_id']) && isset($_SESSION['user_jmeno']) && isset($_SESSION['user_prijmeni'])) {;
+    if (isset($_SESSION['user_id']) && isset($_SESSION['user_jmeno']) && isset($_SESSION['user_prijmeni']) && isset($_SESSION['user_opravneni'])) {;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,13 +43,21 @@
                 <li><a href="#">Zaměstnanci <i class="fa-solid fa-caret-down fa-rotate-90"></i></a>
                     <ul>
                         <form action="../php/vypis_zamestnancu.php"><button type="submit" class="proklik"><li>Výpis zaměstnanců</li></button></form>
-                        <li><a href="./pridani-zamestnanci.php">Přidání zaměstnance</a></li>
+                        <?php
+                            if ($_SESSION['user_opravneni'] == 1) {
+                                echo '<li><a href="./pridani-zamestnanci.php">Přidání zaměstnance</a></li>';
+                            }
+                        ?>
                     </ul>
                 </li>
                 <li><a href="#">Pacienti <i class="fa-solid fa-caret-down fa-rotate-90"></i></a>
                     <ul>
-                    <form action="../php/vypis_pacientu.php"><button type="submit" class="proklik"><li class="current_page">Výpis pacientů</li></button></form>
-                        <li><a href="./pridani-pacienti.php">Přidání pacienta</a></li>
+                        <form action="../php/vypis_pacientu.php"><button type="submit" class="proklik"><li class="current_page">Výpis pacientů</li></button></form>
+                        <?php
+                            if ($_SESSION['user_opravneni'] <= 2) {
+                                echo '<li><a href="./pridani-pacienti.php">Přidání pacienta</a></li>';
+                            }
+                        ?>
                     </ul>
                 </li>
                 <li><a href="../php/log-vypis.php">Log akcí</a></li>
@@ -74,7 +82,14 @@
                     <th>Oddělení</th>
                     <th>Číslo pokoje</th>
                     <th>Číslo lůžka</th>
-                    <th><a href="./pridani-pacienti.php"><button class="add-btn">Přidat</button></a></th>
+                    <?php
+                        if ($_SESSION['user_opravneni'] <= 2) {
+                            echo '<th><a href="./pridani-pacienti.php"><button class="add-btn">Přidat</button></a></th>';
+                        }
+                        else {
+                            echo "<th></th>";
+                        }
+                    ?>
                 </tr>
                 <tbody id="table-tbody">
                 <?php
@@ -89,8 +104,12 @@
                         echo "<td>" . $row['cislo_luzka'] . "</td>";
                         echo "<td>";
                         echo '<form action="../php/presmerovani_dokumentace.php" method="post" style="display: inline-block; margin: 0; padding: 10px;"><button value=' . $row["fk_pacient"] . ' class="dokument-btn" name="button" type="submit">Dokumentace</button></form>';
-                        echo '<form action="../php/presmerovani_uprava.php" method="post" style="display: inline-block; margin: 0; padding: 10px;"><button value=' . $row["fk_pacient"] . ' class="uprava-btn" name="button" type="submit">Upravit dokumentaci</button></form>';
-                        echo '<form action="../php/smazat_pacienta.php" method="post" style="display: inline-block; margin: 0; padding: 10px;" onsubmit="return confirm(\'Jste si jisti že chcete smazat pacienta ' . $row['jmeno'] . ' ' . $row['prijmeni'] . '?\');"><button value=' . $row["fk_pacient"] . ' class="delete-btn" name="delete-btn" type="submit">Smazat</button></form>';
+                        if ($_SESSION['user_opravneni'] <= 2) {
+                            echo '<form action="../php/presmerovani_uprava.php" method="post" style="display: inline-block; margin: 0; padding: 10px;"><button value=' . $row["fk_pacient"] . ' class="uprava-btn" name="button" type="submit">Upravit dokumentaci</button></form>';
+                        }
+                        if ($_SESSION['user_opravneni'] == 1) {
+                            echo '<form action="../php/smazat_pacienta.php" method="post" style="display: inline-block; margin: 0; padding: 10px;" onsubmit="return confirm(\'Jste si jisti že chcete smazat pacienta ' . $row['jmeno'] . ' ' . $row['prijmeni'] . '?\');"><button value=' . $row["fk_pacient"] . ' class="delete-btn" name="delete-btn" type="submit">Smazat</button></form>';
+                        }
                         echo "</td>";
                         echo "</tr>";
                     }
@@ -105,8 +124,12 @@
                         echo "<td>-</td>";
                         echo "<td>";
                         echo '<form action="../php/presmerovani_dokumentace.php" method="post" style="display: inline-block; margin: 0; padding: 10px;"><button value=' . $row["fk_pacient"] . ' class="dokument-btn" name="button" type="submit">Dokumentace</button></form>';
-                        echo '<form action="../php/presmerovani_uprava.php" method="post" style="display: inline-block; margin: 0; padding: 10px;"><button value=' . $row["fk_pacient"] . ' class="uprava-btn" name="button" type="submit">Upravit dokumentaci</button></form>';
-                        echo '<form action="../php/smazat_pacienta.php" method="post" style="display: inline-block; margin: 0; padding: 10px;" onsubmit="return confirm(\'Jste si jisti že chcete smazat pacienta ' . $row['jmeno'] . ' ' . $row['prijmeni'] . '?\');"><button value=' . $row["fk_pacient"] . ' class="delete-btn" name="delete-btn" type="submit">Smazat</button></form>';
+                        if ($_SESSION['user_opravneni'] <= 2) {
+                            echo '<form action="../php/presmerovani_uprava.php" method="post" style="display: inline-block; margin: 0; padding: 10px;"><button value=' . $row["fk_pacient"] . ' class="uprava-btn" name="button" type="submit">Upravit dokumentaci</button></form>';
+                        }
+                        if ($_SESSION['user_opravneni'] == 1) {
+                            echo '<form action="../php/smazat_pacienta.php" method="post" style="display: inline-block; margin: 0; padding: 10px;" onsubmit="return confirm(\'Jste si jisti že chcete smazat pacienta ' . $row['jmeno'] . ' ' . $row['prijmeni'] . '?\');"><button value=' . $row["fk_pacient"] . ' class="delete-btn" name="delete-btn" type="submit">Smazat</button></form>';
+                        }
                         echo "</td>";
                         echo "</tr>";
                     }

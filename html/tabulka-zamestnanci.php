@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if (isset($_SESSION['user_id']) && isset($_SESSION['user_jmeno']) && isset($_SESSION['user_prijmeni'])) {;
+    if (isset($_SESSION['user_id']) && isset($_SESSION['user_jmeno']) && isset($_SESSION['user_prijmeni']) && isset($_SESSION['user_opravneni'])) {;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,13 +43,21 @@
                 <li><a href="#">Zaměstnanci <i class="fa-solid fa-caret-down fa-rotate-90"></i></a>
                     <ul>
                         <form action="../php/vypis_zamestnancu.php"><button type="submit" class="proklik"><li class="current_page">Výpis zaměstnanců</li></button></form>
-                        <li><a href="./pridani-zamestnanci.php">Přidání zaměstnance</a></li>
+                        <?php
+                            if ($_SESSION['user_opravneni'] == 1) {
+                                echo '<li><a href="./pridani-zamestnanci.php">Přidání zaměstnance</a></li>';
+                            }
+                        ?>
                     </ul>
                 </li>
                 <li><a href="#">Pacienti <i class="fa-solid fa-caret-down fa-rotate-90"></i></a>
                     <ul>
-                    <form action="../php/vypis_pacientu.php"><button type="submit" class="proklik"><li>Výpis pacientů</li></button></form>
-                        <li><a href="./pridani-pacienti.php">Přidání pacienta</a></li>
+                        <form action="../php/vypis_pacientu.php"><button type="submit" class="proklik"><li>Výpis pacientů</li></button></form>
+                        <?php
+                            if ($_SESSION['user_opravneni'] <= 2) {
+                                echo '<li><a href="./pridani-pacienti.php">Přidání pacienta</a></li>';
+                            }
+                        ?>
                     </ul>
                 </li>
                 <li><a href="../php/log-vypis.php">Log akcí</a></li>
@@ -71,7 +79,14 @@
                     <th>Příjmení</th>
                     <th>Pozice</th>
                     <th>Specializace</th>
-                    <th><a href="./pridani-zamestnanci.php"><button class="add-btn">Přidat</button></a></th>
+                    <?php
+                        if ($_SESSION['user_opravneni'] == 1) {
+                            echo '<th><a href="./pridani-zamestnanci.php"><button class="add-btn">Přidat</button></a></th>';
+                        }
+                        else {
+                            echo "<th></th>";
+                        }
+                    ?>
                 </tr>
                 <tbody id="table-tbody">
                     <?php
@@ -89,7 +104,11 @@
                             } else {
                                 echo "<td>" . $row['nazev_specializace'] . "</td>";
                             }
-                            echo '<td><form action="../php/smazat_zamestnance.php" method="post" onsubmit="return confirm(\'Jste si jisti že chcete smazat zaměstnance ' . $row['jmeno'] . ' ' . $row['prijmeni'] . '?\');"><button value=' . $row["id"] . ' class="delete-btn" name="delete-btn" type="submit">Smazat</button></form></td>';
+                            if ($_SESSION['user_opravneni'] == 1) {
+                                echo '<td><form action="../php/smazat_zamestnance.php" method="post" onsubmit="return confirm(\'Jste si jisti že chcete smazat zaměstnance ' . $row['jmeno'] . ' ' . $row['prijmeni'] . '?\');"><button value=' . $row["id"] . ' class="delete-btn" name="delete-btn" type="submit">Smazat</button></form></td>';
+                            } else {
+                                echo "<td></td>";
+                            }
                             echo "</tr>";
                         }
                     ?>

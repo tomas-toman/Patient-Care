@@ -184,6 +184,14 @@ header label {
     width: 100%;
     margin-top: 15px;
  }
+ #info-icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+ }
  #info-card p {
     color: var(--secondary);
     font-size: 25px;

@@ -31,10 +31,11 @@ if (isset($_POST['uzivatelske_jmeno'], $_POST['heslo'])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_jmeno'] = $user['jmeno'];
             $_SESSION['user_prijmeni'] = $user['prijmeni'];
+            $_SESSION['user_opravneni'] = $user['opravneni'];
 
             // Záznam do logu
             $logData = $_SESSION['user_jmeno'] . " " . $_SESSION['user_prijmeni'] . " se přihlásil/a.";
-            $queryLog = "INSERT INTO log (data, datum) VALUES ($1, NOW())";
+            $queryLog = "INSERT INTO log (data, datum) VALUES ($1, DATE_TRUNC('second', NOW())))";
             $resultLog = pg_query_params($conn, $queryLog, array($logData));
 
             // Přesměrování na menu
